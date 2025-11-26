@@ -1,7 +1,7 @@
 {
   "nav": {
     "home": "Home",
-    "about": "About",
+    "about": "The Project",
     "videos": "Videos",
     "contact": "Contact",
     "watchYoutube": "Go to YouTube"
@@ -22,7 +22,7 @@
     "missionText": "We are a project driven mainly by migrants, with a strong commitment to making visible the cultural diversity that passes through the city. We seek to capture Barcelona's music scene to show the authentic experience of each concert."
   },
   "about": {
-    "title": "Who we are",
+    "title": "The Project",
     "intro": "La Casa de la Hormiga is a project born from the passion for capturing the authentic experience of live music in Barcelona. Through audiovisual recordings, we document artists of diverse styles and origins in real spaces of the city.",
     "team": "We are a group of friends who share the love for music, visuals and technology. What makes our project special is the organic collaboration and exchange of knowledge: each person contributes from their place, and together we grow and create.",
     "historyTitle": "Project history",
@@ -36,7 +36,9 @@
     "value2Title": "Professionalism",
     "value2Text": "We are committed to working with seriousness and warmth, creating an atmosphere of trust.",
     "value3Title": "Diversity",
-    "value3Text": "We reject any form of discrimination. Our community is founded on inclusion and respect."
+    "value3Text": "We reject any form of discrimination. Our community is founded on inclusion and respect.",
+    "teamSectionTitle": "The Team",
+    "teamSectionSubtitle": "The people behind La Casa de la Hormiga"
   },
   "videos": {
     "title": "Our videos",
@@ -97,32 +99,5 @@
     "beginnings": "The beginnings",
     "growth": "The growth",
     "principles": "Principles"
-  },
-  "videoData": {
-    "pyramides": {
-      "title": "Pyramides",
-      "date": "May 5, 2024",
-      "description": "One of the first concerts we recorded outside our flat. It was also the debut of the band's new formation in Barcelona."
-    },
-    "manza": {
-      "title": "Manza",
-      "date": "September 29, 2024",
-      "description": "Historic musician and reference of the Argentine scene, Manza gave us a spontaneous, almost improvised concert."
-    },
-    "galeriaInterior": {
-      "title": "Galería Interior",
-      "date": "July 29, 2023",
-      "description": "It was one of the first concerts we recorded and one of the most exciting."
-    },
-    "sergioPangaro": {
-      "title": "Sergio Pángaro",
-      "date": "October 6, 2024",
-      "description": "A different show because it was, besides musical, also performative."
-    },
-    "gilDeGils": {
-      "title": "Gil de Gils",
-      "date": "February 24, 2024",
-      "description": "Powerful and technical concert in a self-managed, diverse and community space."
-    }
   }
 }

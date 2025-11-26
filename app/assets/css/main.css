@@ -109,8 +109,31 @@ h1, h2, h3, h4, h5, h6 {
 .header .logo h1 {
   font-size: 24px;
   margin: 0;
-  font-weight: 700;
+  font-weight: 400;
   color: var(--color-violeta);
+  white-space: nowrap;
+  text-transform: uppercase;
+}
+
+@media (max-width: 767px) {
+  .header .logo h1 {
+    font-size: 16px;
+  }
+
+  .header .logo img {
+    max-height: 36px;
+  }
+}
+
+@media (max-width: 400px) {
+  .header .logo h1 {
+    font-size: 14px;
+  }
+
+  .header .logo img {
+    max-height: 30px;
+    margin-right: 6px;
+  }
 }
 
 .header .btn-getstarted,
@@ -369,18 +392,20 @@ section {
   border-bottom: none;
 }
 
-.about .content ul i {
+.about .content ul i,
+.about .content ul svg {
   font-size: 24px;
+  width: 50px;
+  height: 50px;
   color: var(--color-violeta);
   margin-right: 20px;
   flex-shrink: 0;
   background: rgba(189, 120, 255, 0.1);
-  width: 50px;
-  height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 8px;
+  padding: 12px;
 }
 
 .about .content ul h5 {
@@ -537,9 +562,13 @@ section {
   align-items: center;
 }
 
-.features ul li i {
+.features ul li i,
+.features ul li svg {
   color: var(--color-verde);
   margin-right: 10px;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
 }
 
 /*--------------------------------------------------------------
@@ -691,8 +720,11 @@ section {
   border-color: var(--color-violeta);
 }
 
-.contact .info-item i {
-  font-size: 32px;
+.contact .info-item i,
+.contact .info-item svg {
+  font-size: 48px;
+  width: 48px;
+  height: 48px;
   color: var(--color-violeta);
   margin-bottom: 15px;
 }
@@ -774,7 +806,29 @@ section {
 /*--------------------------------------------------------------
 # Responsive
 --------------------------------------------------------------*/
+@media (max-width: 991px) {
+  .page-title {
+    padding: 120px 0 40px 0;
+  }
+
+  .page-title h1 {
+    font-size: 32px;
+  }
+
+  .call-to-action {
+    padding: 60px 0;
+  }
+
+  .call-to-action h3 {
+    font-size: 24px;
+  }
+}
+
 @media (max-width: 768px) {
+  .hero {
+    padding: 100px 0 40px 0;
+  }
+
   .hero h2 {
     font-size: 32px;
   }
@@ -783,11 +837,100 @@ section {
     font-size: 16px;
   }
 
+  .hero .stats-item span {
+    font-size: 24px;
+  }
+
+  .hero .stats-item p {
+    font-size: 14px;
+  }
+
   section {
     padding: 60px 0;
   }
 
+  .section-title {
+    padding-bottom: 40px;
+  }
+
   .section-title h2 {
     font-size: 28px;
+  }
+
+  .page-title {
+    padding: 100px 0 30px 0;
+  }
+
+  .page-title h1 {
+    font-size: 28px;
+  }
+
+  /* Video cards responsive */
+  .services .card h3 {
+    font-size: 18px;
+    padding: 15px 15px 0 15px;
+  }
+
+  .services .card p {
+    padding: 10px 15px 15px 15px;
+    font-size: 13px;
+  }
+
+  .services .card .card-date {
+    padding: 10px 15px 0 15px;
+  }
+
+  /* Features section */
+  .features .features-item {
+    padding: 30px 0;
+  }
+
+  .features h3 {
+    font-size: 20px;
+  }
+
+  /* Contact info items */
+  .contact .info-item {
+    padding: 20px;
+  }
+
+  .contact .info-item i,
+  .contact .info-item svg {
+    font-size: 36px;
+    width: 36px;
+    height: 36px;
+  }
+
+  .contact .info-item h3 {
+    font-size: 16px;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 40px 0 20px 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero h2 {
+    font-size: 26px;
+  }
+
+  .section-title h2 {
+    font-size: 24px;
+  }
+
+  .page-title h1 {
+    font-size: 24px;
+  }
+
+  /* Stack stats in 2 columns on very small screens */
+  .hero .stats-item {
+    padding: 15px 10px;
+  }
+
+  /* Video cards full width on mobile */
+  .services .card-img {
+    aspect-ratio: 16/9;
   }
 }

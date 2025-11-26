@@ -1,7 +1,7 @@
 {
   "nav": {
     "home": "Inici",
-    "about": "Nosaltres",
+    "about": "El Projecte",
     "videos": "Vídeos",
     "contact": "Contacte",
     "watchYoutube": "Anar a YouTube"
@@ -22,7 +22,7 @@
     "missionText": "Som un projecte impulsat principalment per migrants, amb un fort compromís per visibilitzar la diversitat cultural que transita la ciutat. Busquem capturar l'escena musical de Barcelona per mostrar l'experiència autèntica que es viu a cada concert."
   },
   "about": {
-    "title": "Qui som",
+    "title": "El Projecte",
     "intro": "La Casa de la Hormiga és un projecte que neix de la passió per capturar l'experiència autèntica de la música en viu a Barcelona. A través de gravacions audiovisuals, documentem artistes de diversos estils i orígens en espais reals de la ciutat.",
     "team": "Som un grup d'amics i amigues que compartim l'amor per la música, el visual i el tècnic. L'especial del nostre projecte és la col·laboració orgànica i l'intercanvi de coneixements: cada persona aporta des del seu lloc, i junts creixem i creem.",
     "historyTitle": "Història del projecte",
@@ -36,7 +36,9 @@
     "value2Title": "Professionalitat",
     "value2Text": "Ens comprometem a treballar amb serietat i calidesa, generant un ambient de confiança.",
     "value3Title": "Diversitat",
-    "value3Text": "Rebutgem qualsevol forma de discriminació. La nostra comunitat es funda en la inclusió i el respecte."
+    "value3Text": "Rebutgem qualsevol forma de discriminació. La nostra comunitat es funda en la inclusió i el respecte.",
+    "teamSectionTitle": "L'Equip",
+    "teamSectionSubtitle": "Les persones darrere de La Casa de la Hormiga"
   },
   "videos": {
     "title": "Els nostres vídeos",
@@ -97,32 +99,5 @@
     "beginnings": "Els inicis",
     "growth": "El creixement",
     "principles": "Principis"
-  },
-  "videoData": {
-    "pyramides": {
-      "title": "Pyramides",
-      "date": "5 de maig de 2024",
-      "description": "Un dels primers concerts que vam gravar fora del pis. Va ser a més el debut de la nova formació de la banda a Barcelona."
-    },
-    "manza": {
-      "title": "Manza",
-      "date": "29 de setembre de 2024",
-      "description": "Músic històric i referent de l'escena argentina, Manza ens va regalar un concert espontani, gairebé improvisat."
-    },
-    "galeriaInterior": {
-      "title": "Galería Interior",
-      "date": "29 de juliol de 2023",
-      "description": "Va ser un dels primers concerts que vam gravar i un dels més emocionants."
-    },
-    "sergioPangaro": {
-      "title": "Sergio Pángaro",
-      "date": "6 d'octubre de 2024",
-      "description": "Un show diferent perquè va ser, a més de musical, també performàtic."
-    },
-    "gilDeGils": {
-      "title": "Gil de Gils",
-      "date": "24 de febrer de 2024",
-      "description": "Concert potent i tècnic en un espai autogestionat, divers i comunitari."
-    }
   }
 }

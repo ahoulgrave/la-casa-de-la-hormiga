@@ -22,16 +22,16 @@
       </div>
 
       <div class="container">
-        <div class="row gy-4">
-          <div v-for="(video, index) in allVideos" :key="video.id" class="col-lg-4 col-md-6" data-aos="fade-up" :data-aos-delay="100 * ((index % 3) + 1)">
-            <div class="card video-card" @click="openVideoModal(video)">
+        <div class="row gy-4 videos-row">
+          <div v-for="(video, index) in allVideos" :key="video.id" class="col-lg-4 col-md-6 d-flex" data-aos="fade-up" :data-aos-delay="100 * ((index % 3) + 1)">
+            <div class="card video-card h-100" @click="openVideoModal(video)">
               <div class="card-img">
                 <img :src="video.thumbnail" :alt="video.title" class="img-fluid" />
                 <span class="play-btn">
-                  <i class="bi bi-play-circle-fill"></i>
+                  <FaIcon icon="circle-play" />
                 </span>
               </div>
-              <p class="card-date">{{ video.date }}</p>
+              <p class="card-date">{{ video.formattedDate }}</p>
               <h3>{{ video.title }}</h3>
               <p>{{ video.description }}</p>
             </div>
@@ -41,8 +41,8 @@
         <!-- YouTube Channel CTA -->
         <div class="text-center mt-5" data-aos="fade-up">
           <p class="mb-4" style="color: rgba(255,255,255,0.7);">{{ $t('videos.watchOnYoutube') }}</p>
-          <a href="https://www.youtube.com/@lacasadelahormiga" target="_blank" rel="noopener" class="btn-youtube">
-            <i class="bi bi-youtube me-2"></i>
+          <a :href="socialLinks.youtube" target="_blank" rel="noopener" class="btn-youtube">
+            <FaIcon :icon="['fab', 'youtube']" class="me-2" />
             {{ $t('videos.youtubeChannel') }}
           </a>
         </div>
@@ -57,7 +57,7 @@
     >
       <div class="video-modal-card" v-if="selectedVideo">
         <button class="close-btn" @click="closeVideoModal">
-          <i class="bi bi-x-lg"></i>
+          <FaIcon icon="xmark" />
         </button>
 
         <div class="video-container">
@@ -74,14 +74,14 @@
           <div class="video-header">
             <h2>{{ selectedVideo.title }}</h2>
             <span class="video-date">
-              <i class="bi bi-calendar3"></i>
-              {{ selectedVideo.date }}
+              <FaIcon icon="calendar" />
+              {{ selectedVideo.formattedDate }}
             </span>
           </div>
           <p class="video-description">{{ selectedVideo.description }}</p>
           <div class="video-actions">
             <a :href="selectedVideo.youtubeUrl" target="_blank" rel="noopener" class="btn-watch-youtube">
-              <i class="bi bi-youtube"></i>
+              <FaIcon :icon="['fab', 'youtube']" />
               Ver en YouTube
             </a>
           </div>
@@ -92,7 +92,10 @@
 </template>
 
 <script setup lang="ts">
-const { t } = useI18n()
+import { videosData, type VideoData } from '~/data/videos'
+import { socialLinks } from '~/data/social'
+
+const { locale } = useI18n()
 const localePath = useLocalePath()
 
 useHead({
@@ -103,6 +106,7 @@ interface Video {
   id: string
   title: string
   date: string
+  formattedDate: string
   description: string
   thumbnail: string
   youtubeUrl: string
@@ -110,80 +114,28 @@ interface Video {
 
 const selectedVideo = ref<Video | null>(null)
 
-const allVideos = computed(() => [
-  {
-    id: 'pyramides',
-    title: t('videoData.pyramides.title'),
-    date: t('videoData.pyramides.date'),
-    description: t('videoData.pyramides.description'),
-    thumbnail: '/img/pyramides_1.jpg',
-    youtubeUrl: 'https://www.youtube.com/watch?v=qNz-JDd6_Eo'
-  },
-  {
-    id: 'manza',
-    title: t('videoData.manza.title'),
-    date: t('videoData.manza.date'),
-    description: t('videoData.manza.description'),
-    thumbnail: '/img/manza_1.jpg',
-    youtubeUrl: 'https://www.youtube.com/watch?v=C1D30TS0hmY'
-  },
-  {
-    id: 'galeriaInterior',
-    title: t('videoData.galeriaInterior.title'),
-    date: t('videoData.galeriaInterior.date'),
-    description: t('videoData.galeriaInterior.description'),
-    thumbnail: '/img/lvz_silenciosa.jpg',
-    youtubeUrl: 'https://www.youtube.com/watch?v=8C4IPKPuhEI'
-  },
-  {
-    id: 'sergioPangaro',
-    title: t('videoData.sergioPangaro.title'),
-    date: t('videoData.sergioPangaro.date'),
-    description: t('videoData.sergioPangaro.description'),
-    thumbnail: '/img/pangaro.jpg',
-    youtubeUrl: 'https://www.youtube.com/watch?v=3D-9XwMOGnY'
-  },
-  {
-    id: 'gilDeGils',
-    title: t('videoData.gilDeGils.title'),
-    date: t('videoData.gilDeGils.date'),
-    description: t('videoData.gilDeGils.description'),
-    thumbnail: '/img/nadie_lo_quiere_1.jpg',
-    youtubeUrl: 'https://www.youtube.com/watch?v=EK5vv1PgkfU'
-  },
-  {
-    id: 'catiKate',
-    title: 'Cati Kate',
-    date: '2024',
-    description: 'Live Session en Barcelona',
-    thumbnail: '/img/cati_kate.jpg',
-    youtubeUrl: 'https://www.youtube.com/@lacasadelahormiga'
-  },
-  {
-    id: 'conchitesGutierrez',
-    title: 'Conchites Gutierrez',
-    date: '2024',
-    description: 'Live Session en Barcelona',
-    thumbnail: '/img/conchites_gutierrez.png',
-    youtubeUrl: 'https://www.youtube.com/@lacasadelahormiga'
-  },
-  {
-    id: 'luqArlequin',
-    title: 'Luq Arlequin',
-    date: '2024',
-    description: 'Live Session en Barcelona',
-    thumbnail: '/img/luq_arlequin.jpg',
-    youtubeUrl: 'https://www.youtube.com/@lacasadelahormiga'
-  },
-  {
-    id: 'rocasChinas',
-    title: 'Rocas Chinas',
-    date: '2024',
-    description: 'Live Session en Barcelona',
-    thumbnail: '/img/rocas_chinas.jpg',
-    youtubeUrl: 'https://www.youtube.com/@lacasadelahormiga'
-  }
-])
+// Format date according to current locale
+function formatDate(isoDate: string): string {
+  const date = new Date(isoDate)
+  return date.toLocaleDateString(locale.value, {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  })
+}
+
+// Build videos with data from the file
+const allVideos = computed(() =>
+  videosData.map(video => ({
+    id: video.id,
+    title: video.title,
+    date: video.date,
+    formattedDate: formatDate(video.date),
+    description: video.description[locale.value as keyof typeof video.description] || video.description.es,
+    thumbnail: video.thumbnail,
+    youtubeUrl: video.youtubeUrl
+  }))
+)
 
 function openVideoModal(video: Video) {
   selectedVideo.value = video
@@ -226,8 +178,24 @@ onMounted(() => {
 </script>
 
 <style scoped>
+/* Videos grid equal height */
+.videos-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .video-card {
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.video-card p:last-child {
+  flex-grow: 1;
+}
+
+.video-card.h-100 {
+  height: 100%;
 }
 
 .video-card .card-img {
@@ -447,9 +415,20 @@ onMounted(() => {
 }
 
 /* Responsive */
+@media (max-width: 991px) {
+  .video-modal-card {
+    max-width: 95%;
+  }
+}
+
 @media (max-width: 768px) {
+  .video-modal-overlay {
+    padding: 10px;
+  }
+
   .video-modal-card {
     max-height: 95vh;
+    overflow-y: auto;
   }
 
   .video-header {
@@ -462,6 +441,52 @@ onMounted(() => {
 
   .video-info {
     padding: 20px;
+  }
+
+  .video-description {
+    font-size: 14px;
+  }
+
+  .close-btn {
+    width: 36px;
+    height: 36px;
+    top: 10px;
+    right: 10px;
+  }
+
+  .btn-youtube {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  .video-card .play-btn {
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 576px) {
+  .video-modal-overlay {
+    padding: 5px;
+    align-items: flex-start;
+    padding-top: 20px;
+  }
+
+  .video-header h2 {
+    font-size: 18px;
+  }
+
+  .video-info {
+    padding: 15px;
+  }
+
+  .btn-watch-youtube {
+    width: 100%;
+    justify-content: center;
+    padding: 12px 20px;
+  }
+
+  .video-card .play-btn {
+    font-size: 40px;
   }
 }
 </style>

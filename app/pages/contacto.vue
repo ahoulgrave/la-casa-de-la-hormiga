@@ -17,27 +17,27 @@
     <!-- Contact Section -->
     <section id="contact" class="contact section">
       <div class="container">
-        <div class="row gy-4">
+        <div class="row gy-4 contact-cards-row">
           <!-- Contact Cards -->
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="info-item">
-              <i class="bi bi-music-note-beamed"></i>
+          <div class="col-lg-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
+            <div class="info-item h-100">
+              <FaIcon icon="music" />
               <h3>{{ $t('contact.artistsTitle') }}</h3>
               <p>{{ $t('contact.artistsText') }}</p>
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="info-item">
-              <i class="bi bi-building"></i>
+          <div class="col-lg-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
+            <div class="info-item h-100">
+              <FaIcon icon="house" />
               <h3>{{ $t('contact.spacesTitle') }}</h3>
               <p>{{ $t('contact.spacesText') }}</p>
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="info-item">
-              <i class="bi bi-camera-video"></i>
+          <div class="col-lg-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
+            <div class="info-item h-100">
+              <FaIcon icon="wrench" />
               <h3>{{ $t('contact.teamTitle') }}</h3>
               <p>{{ $t('contact.teamText') }}</p>
             </div>
@@ -99,10 +99,10 @@
                   <div class="col-12">
                     <button type="submit" class="btn-submit" :disabled="isSubmitting">
                       <span v-if="isSubmitting">
-                        <i class="bi bi-hourglass-split me-2"></i>{{ $t('contact.form.sending') }}
+                        <FaIcon icon="hourglass" class="me-2" />{{ $t('contact.form.sending') }}
                       </span>
                       <span v-else>
-                        <i class="bi bi-send me-2"></i>{{ $t('contact.form.send') }}
+                        <FaIcon icon="paper-plane" class="me-2" />{{ $t('contact.form.send') }}
                       </span>
                     </button>
                   </div>
@@ -110,10 +110,10 @@
 
                 <!-- Success/Error Messages -->
                 <div v-if="submitStatus === 'success'" class="alert alert-success mt-3">
-                  <i class="bi bi-check-circle me-2"></i>{{ $t('contact.form.success') }}
+                  <FaIcon icon="circle-check" class="me-2" />{{ $t('contact.form.success') }}
                 </div>
                 <div v-if="submitStatus === 'error'" class="alert alert-error mt-3">
-                  <i class="bi bi-exclamation-circle me-2"></i>{{ $t('contact.form.error') }}
+                  <FaIcon icon="circle-exclamation" class="me-2" />{{ $t('contact.form.error') }}
                 </div>
               </form>
             </div>
@@ -124,21 +124,14 @@
             <div class="contact-info-card">
               <h3>{{ $t('footer.social') }}</h3>
               <div class="social-links-large">
-                <a href="https://www.youtube.com/@lacasadelahormiga" target="_blank" rel="noopener" class="youtube">
-                  <i class="bi bi-youtube"></i>
+                <a :href="socialLinks.youtube" target="_blank" rel="noopener" class="youtube">
+                  <FaIcon :icon="['fab', 'youtube']" />
                   <span>YouTube</span>
                 </a>
-                <a href="https://www.instagram.com/lacasadelahormiga.bcn/" target="_blank" rel="noopener" class="instagram">
-                  <i class="bi bi-instagram"></i>
+                <a :href="socialLinks.instagram" target="_blank" rel="noopener" class="instagram">
+                  <FaIcon :icon="['fab', 'instagram']" />
                   <span>Instagram</span>
                 </a>
-              </div>
-              <div class="contact-method mt-4">
-                <i class="bi bi-geo-alt"></i>
-                <div>
-                  <h4>{{ $t('location.city') }}</h4>
-                  <p>{{ $t('location.country') }}</p>
-                </div>
               </div>
             </div>
           </div>
@@ -152,7 +145,7 @@
         <div class="row justify-content-center">
           <div class="col-lg-8 text-center" data-aos="fade-up">
             <div class="location-card">
-              <i class="bi bi-geo-alt-fill"></i>
+              <FaIcon icon="location-dot" />
               <h3>{{ $t('location.city') }}</h3>
               <p>{{ $t('location.venuesDescription') }}</p>
             </div>
@@ -164,6 +157,8 @@
 </template>
 
 <script setup lang="ts">
+import { socialLinks } from '~/data/social'
+
 const localePath = useLocalePath()
 
 useHead({
@@ -236,6 +231,28 @@ onMounted(() => {
 </script>
 
 <style scoped>
+/* Contact Cards equal height */
+.contact-cards-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+  align-items: center;
+}
+
+.info-item p:last-child {
+  flex-grow: 1;
+}
+
+.info-item.h-100 {
+  height: 100%;
+}
+
 /* Contact Form Card */
 .contact-form-card {
   background: var(--surface-color);
@@ -414,8 +431,11 @@ onMounted(() => {
   text-decoration: none;
 }
 
-.social-links-large a i {
-  font-size: 28px;
+.social-links-large a i,
+.social-links-large a svg {
+  font-size: 32px;
+  width: 32px;
+  height: 32px;
   margin-right: 15px;
 }
 
@@ -451,8 +471,11 @@ onMounted(() => {
   border: 1px solid rgba(189, 120, 255, 0.3);
 }
 
-.location-card i {
+.location-card i,
+.location-card svg {
   font-size: 48px;
+  width: 48px;
+  height: 48px;
   color: var(--color-verde);
   margin-bottom: 20px;
 }

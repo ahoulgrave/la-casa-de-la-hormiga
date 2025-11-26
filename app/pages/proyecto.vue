@@ -19,7 +19,7 @@
       <div class="container">
         <div class="row gy-4">
           <div class="col-lg-6 position-relative align-self-start order-lg-last order-first" data-aos="fade-up" data-aos-delay="200">
-            <img src="/img/pangaro.jpg" class="img-fluid" alt="La Casa de la Hormiga" />
+            <img src="/img/videos/pangaro.jpg" class="img-fluid" alt="La Casa de la Hormiga" />
           </div>
 
           <div class="col-lg-6 content order-last order-lg-first" data-aos="fade-up" data-aos-delay="100">
@@ -41,7 +41,7 @@
       <div class="container">
         <div class="row gy-4 align-items-center features-item">
           <div class="col-md-5 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="100">
-            <img src="/img/manza_1.jpg" class="img-fluid" alt="Historia" />
+            <img src="/img/videos/manza_1.jpg" class="img-fluid" alt="Historia" />
           </div>
           <div class="col-md-7" data-aos="fade-up" data-aos-delay="100">
             <h3>{{ $t('history.beginnings') }}</h3>
@@ -51,7 +51,7 @@
 
         <div class="row gy-4 align-items-center features-item">
           <div class="col-md-5 order-1 order-md-2 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
-            <img src="/img/pyramides_1.jpg" class="img-fluid" alt="Crecimiento" />
+            <img src="/img/videos/pyramides_1.jpg" class="img-fluid" alt="Crecimiento" />
           </div>
           <div class="col-md-7 order-2 order-md-1" data-aos="fade-up" data-aos-delay="200">
             <h3>{{ $t('history.growth') }}</h3>
@@ -61,7 +61,7 @@
 
         <div class="row gy-4 align-items-center features-item">
           <div class="col-md-5 d-flex align-items-center" data-aos="zoom-out">
-            <img src="/img/nadie_lo_quiere_1.jpg" class="img-fluid" alt="Hoy" />
+            <img src="/img/videos/nadie_lo_quiere_1.jpg" class="img-fluid" alt="Hoy" />
           </div>
           <div class="col-md-7" data-aos="fade-up">
             <h3>{{ $t('about.todayTitle') }}</h3>
@@ -82,23 +82,54 @@
         <div class="row gy-4">
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="value-card">
-              <i class="bi bi-heart"></i>
+              <FaIcon icon="heart" />
               <h3>{{ $t('about.value1Title') }}</h3>
               <p>{{ $t('about.value1Text') }}</p>
             </div>
           </div>
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
             <div class="value-card">
-              <i class="bi bi-briefcase"></i>
+              <FaIcon icon="briefcase" />
               <h3>{{ $t('about.value2Title') }}</h3>
               <p>{{ $t('about.value2Text') }}</p>
             </div>
           </div>
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
             <div class="value-card">
-              <i class="bi bi-globe"></i>
+              <FaIcon icon="globe" />
               <h3>{{ $t('about.value3Title') }}</h3>
               <p>{{ $t('about.value3Text') }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Section - Only shown when there are team members -->
+    <section v-if="teamMembers.length > 0" id="team" class="team section">
+      <div class="container section-title" data-aos="fade-up">
+        <span>{{ $t('about.teamSectionTitle') }}</span>
+        <h2>{{ $t('about.teamSectionTitle') }}</h2>
+        <p>{{ $t('about.teamSectionSubtitle') }}</p>
+      </div>
+
+      <div class="container">
+        <div class="row gy-4">
+          <div v-for="(member, index) in teamMembers" :key="member.id" class="col-lg-4 col-md-6" data-aos="fade-up" :data-aos-delay="100 * ((index % 3) + 1)">
+            <div class="team-card">
+              <div class="team-img">
+                <img :src="member.photo" :alt="member.name" />
+              </div>
+              <div class="team-info">
+                <h3>{{ member.name }}</h3>
+                <span class="role">{{ member.role }}</span>
+                <p>{{ member.bio }}</p>
+                <div v-if="member.instagram" class="team-social">
+                  <a :href="`https://instagram.com/${member.instagram}`" target="_blank" rel="noopener">
+                    <FaIcon :icon="['fab', 'instagram']" />
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -126,10 +157,34 @@
 
 <script setup lang="ts">
 const localePath = useLocalePath()
+const { t } = useI18n()
 
 useHead({
-  title: 'Nosotros - La Casa de la Hormiga'
+  title: 'El Proyecto - La Casa de la Hormiga'
 })
+
+interface TeamMember {
+  id: string
+  name: string
+  role: string
+  bio: string
+  photo: string
+  instagram?: string
+}
+
+// Team data - add real team members here
+// See SECCION_EQUIPO.md for instructions
+const teamMembers: TeamMember[] = [
+  // Example:
+  // {
+  //   id: '1',
+  //   name: 'Juan Pérez',
+  //   role: 'Sonido',
+  //   bio: 'Ingeniero de sonido desde 2015.',
+  //   photo: '/img/team/juan.jpg',
+  //   instagram: 'juanperez_sound'
+  // },
+]
 
 onMounted(() => {
   if (typeof window !== 'undefined' && (window as any).AOS) {
@@ -159,8 +214,11 @@ onMounted(() => {
   transform: translateY(-5px);
 }
 
-.value-card i {
+.value-card i,
+.value-card svg {
   font-size: 48px;
+  width: 48px;
+  height: 48px;
   color: var(--color-violeta);
   margin-bottom: 20px;
 }
@@ -174,5 +232,92 @@ onMounted(() => {
 .value-card p {
   color: rgba(255, 255, 255, 0.7);
   margin: 0;
+}
+
+/* Team Cards */
+.team-card {
+  background: var(--surface-color);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s;
+  height: 100%;
+}
+
+.team-card:hover {
+  border-color: var(--color-violeta);
+  transform: translateY(-5px);
+}
+
+.team-img {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 1;
+}
+
+.team-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.team-card:hover .team-img img {
+  transform: scale(1.05);
+}
+
+.team-info {
+  padding: 20px;
+  text-align: center;
+}
+
+.team-info h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #fff;
+}
+
+.team-info .role {
+  display: block;
+  font-size: 14px;
+  color: var(--color-violeta);
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.team-info p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.team-social {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.team-social a {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  color: rgba(255, 255, 255, 0.7);
+  transition: all 0.3s;
+}
+
+.team-social a:hover {
+  background: var(--color-violeta);
+  color: #000;
+}
+
+.team-social svg {
+  width: 16px;
+  height: 16px;
 }
 </style>

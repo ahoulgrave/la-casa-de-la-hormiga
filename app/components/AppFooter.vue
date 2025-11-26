@@ -10,11 +10,11 @@
           </NuxtLink>
           <p>{{ $t('footer.description') }}</p>
           <div class="social-links d-flex mt-4">
-            <a href="https://www.youtube.com/@lacasadelahormiga" target="_blank" rel="noopener" aria-label="YouTube">
-              <i class="bi bi-youtube"></i>
+            <a :href="socialLinks.youtube" target="_blank" rel="noopener" aria-label="YouTube">
+              <FaIcon :icon="['fab', 'youtube']" />
             </a>
-            <a href="https://www.instagram.com/lacasadelahormiga.bcn/" target="_blank" rel="noopener" aria-label="Instagram">
-              <i class="bi bi-instagram"></i>
+            <a :href="socialLinks.instagram" target="_blank" rel="noopener" aria-label="Instagram">
+              <FaIcon :icon="['fab', 'instagram']" />
             </a>
           </div>
         </div>
@@ -23,7 +23,7 @@
           <h4>{{ $t('footer.links') }}</h4>
           <ul>
             <li><NuxtLink :to="localePath('/')">{{ $t('nav.home') }}</NuxtLink></li>
-            <li><NuxtLink :to="localePath('/nosotros')">{{ $t('nav.about') }}</NuxtLink></li>
+            <li><NuxtLink :to="localePath('/proyecto')">{{ $t('nav.about') }}</NuxtLink></li>
             <li><NuxtLink :to="localePath('/videos')">{{ $t('nav.videos') }}</NuxtLink></li>
             <li><NuxtLink :to="localePath('/contacto')">{{ $t('nav.contact') }}</NuxtLink></li>
           </ul>
@@ -41,9 +41,9 @@
 
         <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
           <h4>{{ $t('nav.contact') }}</h4>
-          <p><i class="bi bi-geo-alt"></i> {{ $t('location.city') }}, {{ $t('location.country') }}</p>
+          <p><FaIcon icon="location-dot" /> {{ $t('location.city') }}, {{ $t('location.country') }}</p>
           <NuxtLink :to="localePath('/contacto')" class="btn-contact-footer mt-2">
-            <i class="bi bi-envelope me-2"></i>{{ $t('contact.formTitle') }}
+            <FaIcon icon="envelope" class="me-2" />{{ $t('contact.formTitle') }}
           </NuxtLink>
         </div>
 
@@ -61,6 +61,8 @@
 </template>
 
 <script setup lang="ts">
+import { socialLinks } from '~/data/social'
+
 const localePath = useLocalePath()
 </script>
 

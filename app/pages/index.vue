@@ -12,8 +12,8 @@
               <NuxtLink :to="localePath('/videos')" class="btn-getstarted">
                 {{ $t('hero.cta') }}
               </NuxtLink>
-              <a href="https://www.youtube.com/@lacasadelahormiga" target="_blank" rel="noopener" class="btn-getstarted btn-secondary">
-                <i class="bi bi-youtube me-2"></i>YouTube
+              <a :href="socialLinks.youtube" target="_blank" rel="noopener" class="btn-getstarted btn-secondary">
+                <FaIcon :icon="['fab', 'youtube']" class="me-2" />YouTube
               </a>
             </div>
 
@@ -32,13 +32,13 @@
               </div>
               <div class="col-lg-3 col-6">
                 <div class="stats-item text-center w-100 h-100">
-                  <span><i class="bi bi-geo-alt-fill"></i></span>
+                  <span><FaIcon icon="location-dot" /></span>
                   <p>{{ $t('stats.barcelona') }}</p>
                 </div>
               </div>
               <div class="col-lg-3 col-6">
                 <div class="stats-item text-center w-100 h-100">
-                  <span><i class="bi bi-heart-fill"></i></span>
+                  <span><FaIcon icon="heart" /></span>
                   <p>{{ $t('stats.liveMusic') }}</p>
                 </div>
               </div>
@@ -57,8 +57,7 @@
       <div class="container">
         <div class="row gy-4">
           <div class="col-lg-6 position-relative align-self-start order-lg-last order-first" data-aos="fade-up" data-aos-delay="200">
-            <img src="/img/nadie_lo_quiere_1.jpg" class="img-fluid" alt="Gil de Gils Live Session" />
-            <span class="pulsating-play-btn" @click="openVideoModal(gilDeGilsVideo)"></span>
+            <img src="/img/videos/nadie_lo_quiere_1.jpg" class="img-fluid" alt="La Casa de la Hormiga Live Session" />
           </div>
 
           <div class="col-lg-6 content order-last order-lg-first" data-aos="fade-up" data-aos-delay="100">
@@ -66,21 +65,21 @@
             <p>{{ $t('home.whatWeDoText') }}</p>
             <ul>
               <li>
-                <i class="bi bi-camera-video"></i>
+                <FaIcon icon="video" />
                 <div>
                   <h5>{{ $t('about.value1Title') }}</h5>
                   <p>{{ $t('about.value1Text') }}</p>
                 </div>
               </li>
               <li>
-                <i class="bi bi-music-note-beamed"></i>
+                <FaIcon icon="music" />
                 <div>
                   <h5>{{ $t('about.value2Title') }}</h5>
                   <p>{{ $t('about.value2Text') }}</p>
                 </div>
               </li>
               <li>
-                <i class="bi bi-people"></i>
+                <FaIcon icon="users" />
                 <div>
                   <h5>{{ $t('about.value3Title') }}</h5>
                   <p>{{ $t('about.value3Text') }}</p>
@@ -107,10 +106,10 @@
               <div class="card-img">
                 <img :src="video.thumbnail" :alt="video.title" class="img-fluid" />
                 <span class="play-btn">
-                  <i class="bi bi-play-circle-fill"></i>
+                  <FaIcon icon="circle-play" />
                 </span>
               </div>
-              <p class="card-date">{{ video.date }}</p>
+              <p class="card-date">{{ video.formattedDate }}</p>
               <h3>{{ video.title }}</h3>
               <p>{{ video.description }}</p>
             </div>
@@ -153,16 +152,16 @@
       <div class="container">
         <div class="row gy-4 align-items-center features-item">
           <div class="col-md-5 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="100">
-            <img src="/img/lvz_silenciosa.jpg" class="img-fluid" alt="Galería Interior Live Session" />
+            <img src="/img/videos/lvz_silenciosa.jpg" class="img-fluid" alt="Galería Interior Live Session" />
           </div>
           <div class="col-md-7" data-aos="fade-up" data-aos-delay="100">
             <h3>{{ $t('about.historyTitle') }}</h3>
             <p class="fst-italic">{{ $t('about.history') }}</p>
             <ul>
-              <li><i class="bi bi-check"></i><span>{{ $t('about.historyGrowth') }}</span></li>
-              <li><i class="bi bi-check"></i><span>{{ $t('about.today') }}</span></li>
+              <li><FaIcon icon="check" /><span>{{ $t('about.historyGrowth') }}</span></li>
+              <li><FaIcon icon="check" /><span>{{ $t('about.today') }}</span></li>
             </ul>
-            <NuxtLink :to="localePath('/nosotros')" class="btn-getstarted mt-3">
+            <NuxtLink :to="localePath('/proyecto')" class="btn-getstarted mt-3">
               {{ $t('nav.about') }}
             </NuxtLink>
           </div>
@@ -178,7 +177,7 @@
     >
       <div class="video-modal-card" v-if="selectedVideo">
         <button class="close-btn" @click="closeVideoModal">
-          <i class="bi bi-x-lg"></i>
+          <FaIcon icon="xmark" />
         </button>
 
         <div class="video-container">
@@ -195,14 +194,14 @@
           <div class="video-header">
             <h2>{{ selectedVideo.title }}</h2>
             <span class="video-date">
-              <i class="bi bi-calendar3"></i>
-              {{ selectedVideo.date }}
+              <FaIcon icon="calendar" />
+              {{ selectedVideo.formattedDate }}
             </span>
           </div>
           <p class="video-description">{{ selectedVideo.description }}</p>
           <div class="video-actions">
             <a :href="selectedVideo.youtubeUrl" target="_blank" rel="noopener" class="btn-watch-youtube">
-              <i class="bi bi-youtube"></i>
+              <FaIcon :icon="['fab', 'youtube']" />
               Ver en YouTube
             </a>
           </div>
@@ -213,13 +212,17 @@
 </template>
 
 <script setup lang="ts">
-const { t } = useI18n()
+import { videosData, featuredVideoIds } from '~/data/videos'
+import { socialLinks } from '~/data/social'
+
+const { locale } = useI18n()
 const localePath = useLocalePath()
 
 interface Video {
   id: string
   title: string
   date: string
+  formattedDate: string
   description: string
   thumbnail: string
   youtubeUrl: string
@@ -227,41 +230,37 @@ interface Video {
 
 const selectedVideo = ref<Video | null>(null)
 
-const gilDeGilsVideo = computed(() => ({
-  id: 'gilDeGils',
-  title: t('videoData.gilDeGils.title'),
-  date: t('videoData.gilDeGils.date'),
-  description: t('videoData.gilDeGils.description'),
-  thumbnail: '/img/nadie_lo_quiere_1.jpg',
-  youtubeUrl: 'https://www.youtube.com/watch?v=EK5vv1PgkfU'
-}))
+// Format date according to current locale
+function formatDate(isoDate: string): string {
+  const date = new Date(isoDate)
+  return date.toLocaleDateString(locale.value, {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  })
+}
 
-const featuredVideos = computed(() => [
-  {
-    id: 'pyramides',
-    title: t('videoData.pyramides.title'),
-    date: t('videoData.pyramides.date'),
-    description: t('videoData.pyramides.description'),
-    thumbnail: '/img/pyramides_1.jpg',
-    youtubeUrl: 'https://www.youtube.com/watch?v=qNz-JDd6_Eo'
-  },
-  {
-    id: 'manza',
-    title: t('videoData.manza.title'),
-    date: t('videoData.manza.date'),
-    description: t('videoData.manza.description'),
-    thumbnail: '/img/manza_1.jpg',
-    youtubeUrl: 'https://www.youtube.com/watch?v=C1D30TS0hmY'
-  },
-  {
-    id: 'sergioPangaro',
-    title: t('videoData.sergioPangaro.title'),
-    date: t('videoData.sergioPangaro.date'),
-    description: t('videoData.sergioPangaro.description'),
-    thumbnail: '/img/pangaro.jpg',
-    youtubeUrl: 'https://www.youtube.com/watch?v=3D-9XwMOGnY'
+// Helper to build video with data
+const buildVideo = (id: string) => {
+  const videoData = videosData.find(v => v.id === id)
+  if (!videoData) return null
+  return {
+    id: videoData.id,
+    title: videoData.title,
+    date: videoData.date,
+    formattedDate: formatDate(videoData.date),
+    description: videoData.description[locale.value as keyof typeof videoData.description] || videoData.description.es,
+    thumbnail: videoData.thumbnail,
+    youtubeUrl: videoData.youtubeUrl
   }
-])
+}
+
+// Featured videos for homepage (configured in data/videos.ts)
+const featuredVideos = computed(() =>
+  featuredVideoIds
+    .map(id => buildVideo(id))
+    .filter((v): v is Video => v !== null)
+)
 
 function openVideoModal(video: Video) {
   selectedVideo.value = video
@@ -538,56 +537,6 @@ onMounted(() => {
 .btn-getstarted.btn-secondary:hover {
   background: var(--color-verde);
   color: #000;
-}
-
-.pulsating-play-btn {
-  width: 94px;
-  height: 94px;
-  background: radial-gradient(var(--color-violeta) 50%, rgba(189, 120, 255, 0.4) 52%);
-  border-radius: 50%;
-  display: block;
-  position: absolute;
-  left: calc(50% - 47px);
-  top: calc(50% - 47px);
-  cursor: pointer;
-}
-
-.pulsating-play-btn::before {
-  content: "";
-  position: absolute;
-  width: 120px;
-  height: 120px;
-  animation: pulsate-btn 2s infinite;
-  opacity: 1;
-  border-radius: 50%;
-  border: 5px solid rgba(189, 120, 255, 0.7);
-  top: -15%;
-  left: -15%;
-}
-
-.pulsating-play-btn::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translateX(-40%) translateY(-50%);
-  width: 0;
-  height: 0;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  border-left: 15px solid #fff;
-  z-index: 100;
-}
-
-@keyframes pulsate-btn {
-  0% {
-    transform: scale(0.6, 0.6);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1, 1);
-    opacity: 0;
-  }
 }
 
 /* Responsive */

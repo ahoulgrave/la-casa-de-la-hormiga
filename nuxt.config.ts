@@ -28,6 +28,24 @@ export default defineNuxtConfig({
       useCookie: true,
       cookieKey: 'i18n_redirected',
       redirectOn: 'root'
+    },
+    customRoutes: 'config',
+    pages: {
+      'proyecto': {
+        es: '/proyecto',
+        en: '/project',
+        ca: '/projecte'
+      },
+      'contacto': {
+        es: '/contacto',
+        en: '/contact',
+        ca: '/contacte'
+      },
+      'videos': {
+        es: '/videos',
+        en: '/videos',
+        ca: '/videos'
+      }
     }
   },
 
@@ -59,7 +77,6 @@ export default defineNuxtConfig({
         { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
         { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap' },
         { rel: 'stylesheet', href: '/vendor/bootstrap/css/bootstrap.min.css' },
-        { rel: 'stylesheet', href: '/vendor/bootstrap-icons/bootstrap-icons.css' },
         { rel: 'stylesheet', href: '/vendor/aos/aos.css' },
         { rel: 'stylesheet', href: '/vendor/glightbox/css/glightbox.min.css' },
       ],
@@ -73,5 +90,8 @@ export default defineNuxtConfig({
   },
 
   // CSS global
-  css: ['~/assets/css/main.css'],
+  css: [
+    '@fortawesome/fontawesome-svg-core/styles.css',
+    '~/assets/css/main.css'
+  ],
 })

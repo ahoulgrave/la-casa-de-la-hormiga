@@ -1,0 +1,109 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Nosotros",
+    "videos": "Videos",
+    "contact": "Contacto",
+    "watchYoutube": "Ir a YouTube"
+  },
+  "hero": {
+    "title": "La Casa de la Hormiga",
+    "subtitle": "Live Sessions",
+    "description": "Grabaciones audiovisuales de música en vivo en Barcelona",
+    "cta": "Ver videos"
+  },
+  "home": {
+    "featured": "Videos destacados",
+    "featuredDescription": "Una selección de nuestras grabaciones más especiales",
+    "viewAll": "Ver todos los videos",
+    "whatWeDo": "Qué hacemos",
+    "whatWeDoText": "En La Casa de la Hormiga realizamos grabaciones audiovisuales de conciertos reales, en vivo y con público. Siempre intentamos interferir lo menos posible en la experiencia de quienes asisten: la prioridad es la música y el momento, no la grabación.",
+    "mission": "Nuestra misión",
+    "missionText": "Somos un proyecto impulsado principalmente por migrantes, con un fuerte compromiso por visibilizar la diversidad cultural que transita la ciudad. Buscamos capturar la escena musical de Barcelona para mostrar la experiencia auténtica que se vive en cada concierto."
+  },
+  "about": {
+    "title": "Quiénes somos",
+    "intro": "La Casa de la Hormiga es un proyecto que nace de la pasión por capturar la experiencia auténtica de la música en vivo en Barcelona. A través de grabaciones audiovisuales, documentamos artistas de diversos estilos y orígenes en espacios reales de la ciudad.",
+    "team": "Somos un grupo de amigos y amigas que compartimos el amor por la música, lo visual y lo técnico. Lo especial de nuestro proyecto es la colaboración orgánica y el intercambio de conocimientos: cada persona aporta desde su lugar, y juntos crecemos y creamos.",
+    "historyTitle": "Historia del proyecto",
+    "history": "La Casa de la Hormiga nació en 2022, de manera muy orgánica, cuando un amigo de la infancia —ingeniero de sonido— se mudó desde Buenos Aires a Barcelona. En ese momento, no sabíamos nada sobre audiovisuales, pero teníamos muchas ganas de aprender.",
+    "historyGrowth": "En 2024 dimos un salto hacia afuera y comenzamos a grabar en salas de conciertos de Barcelona como Diobar, Rock n Trini, Absenta del Raval y Sala Wolf. También tuvimos el honor de grabar a artistas reconocidos como Mi Amigo Invencible, Pyramides, Leo García y Manza, entre muchos otros.",
+    "today": "Hoy, en 2025, seguimos creciendo. Ya publicamos más de 20 videos y tenemos una gran cantidad de material en proceso. El proyecto se ha convertido en una verdadera escuela colectiva.",
+    "valuesTitle": "Nuestros valores",
+    "value1Title": "Autenticidad",
+    "value1Text": "Buscamos capturar la música y el arte tal como son, en su expresión más real y sincera.",
+    "value2Title": "Profesionalidad",
+    "value2Text": "Nos comprometemos a trabajar con seriedad y calidez, generando un ambiente de confianza.",
+    "value3Title": "Diversidad",
+    "value3Text": "Rechazamos cualquier forma de discriminación. Nuestra comunidad se funda en la inclusión y el respeto."
+  },
+  "videos": {
+    "title": "Nuestros videos",
+    "description": "Todas nuestras grabaciones de música en vivo",
+    "watchOnYoutube": "Ver en YouTube",
+    "allVideos": "Todos los videos"
+  },
+  "contact": {
+    "title": "Contacto",
+    "description": "¿Quieres colaborar con nosotros?",
+    "artistsTitle": "Artistas",
+    "artistsText": "Estamos abiertos a propuestas de artistas que quieran grabar con nosotros. No tenemos criterios técnicos ni requisitos específicos: buscamos trabajar con personas que compartan nuestros valores.",
+    "spacesTitle": "Espacios",
+    "spacesText": "Actualmente grabamos exclusivamente en salas de conciertos y espacios reales, con público presente. Si gestionas un espacio y quieres colaborar, estamos siempre interesados en sumar nuevas locaciones.",
+    "teamTitle": "Equipo técnico",
+    "teamText": "Nos encanta compartir lo que sabemos y aprender de otras personas. Si te interesa el mundo de la grabación audiovisual y la música en vivo, puedes acercarte.",
+    "email": "Escríbenos",
+    "formTitle": "Envíanos un mensaje",
+    "form": {
+      "name": "Nombre",
+      "namePlaceholder": "Tu nombre",
+      "email": "Email",
+      "emailPlaceholder": "tu{'@'}email.com",
+      "subject": "Motivo",
+      "subjectPlaceholder": "Selecciona un motivo",
+      "subjectArtist": "Soy artista y quiero grabar",
+      "subjectVenue": "Gestiono un espacio",
+      "subjectTeam": "Quiero unirme al equipo",
+      "subjectOther": "Otro",
+      "message": "Mensaje",
+      "messagePlaceholder": "Cuéntanos sobre tu proyecto o propuesta...",
+      "send": "Enviar mensaje",
+      "sending": "Enviando...",
+      "success": "¡Mensaje enviado! Te responderemos pronto.",
+      "error": "Error al enviar. Por favor, intenta de nuevo."
+    }
+  },
+  "footer": {
+    "description": "Grabaciones audiovisuales de música en vivo en Barcelona. Documentamos la escena musical con pasión y autenticidad.",
+    "links": "Enlaces",
+    "social": "Redes sociales",
+    "copyright": "Todos los derechos reservados"
+  },
+  "videoData": {
+    "pyramides": {
+      "title": "Pyramides",
+      "date": "5 de Mayo de 2024",
+      "description": "Uno de los primeros conciertos que grabamos fuera del piso. Fue además el debut de la nueva formación de la banda en Barcelona."
+    },
+    "manza": {
+      "title": "Manza",
+      "date": "29 de Septiembre de 2024",
+      "description": "Músico histórico y referente de la escena argentina, Manza nos regaló un concierto espontáneo, casi improvisado."
+    },
+    "galeriaInterior": {
+      "title": "Galería Interior",
+      "date": "29 de Julio de 2023",
+      "description": "Fue uno de los primeros conciertos que grabamos y uno de los más emocionantes."
+    },
+    "sergioPangaro": {
+      "title": "Sergio Pángaro",
+      "date": "6 de Octubre de 2024",
+      "description": "Un show distinto porque fue, además de musical, también performático."
+    },
+    "gilDeGils": {
+      "title": "Gil de Gils",
+      "date": "24 de Febrero de 2024",
+      "description": "Concierto potente y técnico en un espacio autogestionado, diverso y comunitario."
+    }
+  }
+}

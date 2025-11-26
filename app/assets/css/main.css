@@ -1,0 +1,793 @@
+/**
+* La Casa de la Hormiga - Main Stylesheet
+* Based on Logis Bootstrap Template
+* Customized with brand colors from manual de marca
+*/
+
+/*--------------------------------------------------------------
+# Font & Color Variables - La Casa de la Hormiga Brand
+--------------------------------------------------------------*/
+:root {
+  --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --heading-font: "Poppins", sans-serif;
+  --nav-font: "Poppins", sans-serif;
+}
+
+/* Brand Colors from Manual de Marca */
+:root {
+  /* Primary Brand Colors */
+  --color-verde: #3BFF9E;
+  --color-amarillo: #FFDA00;
+  --color-violeta: #BD78FF;
+  --color-rosa: #F964C7;
+  --color-negro: #000000;
+  --color-blanco: #FFFFFF;
+
+  /* Template Variables mapped to brand */
+  --background-color: #000000;
+  --default-color: #ffffff;
+  --heading-color: #ffffff;
+  --accent-color: #BD78FF;
+  --surface-color: #111111;
+  --contrast-color: #000000;
+}
+
+/* Nav Menu Colors */
+:root {
+  --nav-color: rgba(255, 255, 255, 0.7);
+  --nav-hover-color: #BD78FF;
+  --nav-mobile-background-color: #111111;
+  --nav-dropdown-background-color: #1a1a1a;
+  --nav-dropdown-color: #ffffff;
+  --nav-dropdown-hover-color: #BD78FF;
+}
+
+.light-background {
+  --background-color: #111111;
+  --surface-color: #1a1a1a;
+}
+
+.dark-background {
+  --background-color: #000000;
+  --default-color: #ffffff;
+  --heading-color: #ffffff;
+  --surface-color: #111111;
+  --contrast-color: #000000;
+}
+
+:root {
+  scroll-behavior: smooth;
+}
+
+/*--------------------------------------------------------------
+# General Styling
+--------------------------------------------------------------*/
+body {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  font-family: var(--default-font);
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: var(--color-verde);
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--heading-color);
+  font-family: var(--heading-font);
+}
+
+/*--------------------------------------------------------------
+# Global Header
+--------------------------------------------------------------*/
+.header {
+  --background-color: rgba(0, 0, 0, 0);
+  --heading-color: #ffffff;
+  color: var(--default-color);
+  background-color: var(--background-color);
+  padding: 20px 0;
+  transition: all 0.5s;
+  z-index: 997;
+}
+
+.header .logo {
+  line-height: 1;
+}
+
+.header .logo img {
+  max-height: 50px;
+  margin-right: 8px;
+}
+
+.header .logo h1 {
+  font-size: 24px;
+  margin: 0;
+  font-weight: 700;
+  color: var(--color-violeta);
+}
+
+.header .btn-getstarted,
+.header .btn-getstarted:focus {
+  color: var(--color-negro);
+  background: var(--color-violeta);
+  font-size: 14px;
+  padding: 8px 25px;
+  margin: 0 0 0 30px;
+  border-radius: 4px;
+  transition: 0.3s;
+  font-weight: 600;
+}
+
+.header .btn-getstarted:hover {
+  background: var(--color-verde);
+  color: var(--color-negro);
+}
+
+.scrolled .header {
+  padding: 10px 0;
+  box-shadow: 0px 0 18px rgba(189, 120, 255, 0.2);
+  --background-color: rgba(0, 0, 0, 0.95);
+}
+
+/*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+@media (min-width: 1200px) {
+  .navmenu {
+    padding: 0;
+  }
+
+  .navmenu ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+    align-items: center;
+  }
+
+  .navmenu li {
+    position: relative;
+  }
+
+  .navmenu a,
+  .navmenu a:focus {
+    color: var(--nav-color);
+    padding: 18px 15px;
+    font-size: 16px;
+    font-family: var(--nav-font);
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    white-space: nowrap;
+    transition: 0.3s;
+  }
+
+  .navmenu li:hover>a,
+  .navmenu .active,
+  .navmenu .active:focus {
+    color: var(--nav-hover-color);
+  }
+}
+
+@media (max-width: 1199px) {
+  .mobile-nav-toggle {
+    color: var(--nav-color);
+    font-size: 28px;
+    line-height: 0;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+
+  .navmenu {
+    padding: 0;
+    z-index: 9997;
+  }
+
+  .navmenu ul {
+    display: none;
+    list-style: none;
+    position: absolute;
+    inset: 60px 20px 20px 20px;
+    padding: 10px 0;
+    margin: 0;
+    border-radius: 6px;
+    background-color: var(--nav-mobile-background-color);
+    overflow-y: auto;
+    transition: 0.3s;
+    z-index: 9998;
+    box-shadow: 0px 0px 30px rgba(189, 120, 255, 0.2);
+  }
+
+  .navmenu a,
+  .navmenu a:focus {
+    color: var(--nav-dropdown-color);
+    padding: 10px 20px;
+    font-family: var(--nav-font);
+    font-size: 17px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    white-space: nowrap;
+    transition: 0.3s;
+  }
+
+  .navmenu a:hover,
+  .navmenu .active,
+  .navmenu .active:focus {
+    color: var(--nav-dropdown-hover-color);
+  }
+}
+
+/*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
+.hero {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  padding: 120px 0 60px 0;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a0a2e 50%, #0a0a0a 100%);
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 80%, rgba(59, 255, 158, 0.1) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(189, 120, 255, 0.15) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 50%, rgba(249, 100, 199, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero h2 {
+  margin: 0;
+  font-size: 48px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.hero h2 span {
+  color: var(--color-violeta);
+}
+
+.hero p {
+  color: rgba(255, 255, 255, 0.7);
+  margin: 10px 0 30px 0;
+  font-size: 20px;
+}
+
+.hero .stats-item {
+  padding: 20px;
+  text-align: center;
+}
+
+.hero .stats-item span {
+  font-size: 32px;
+  display: block;
+  color: var(--color-violeta);
+  font-weight: 700;
+}
+
+.hero .stats-item p {
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.hero .hero-img img {
+  max-width: 100%;
+  height: auto;
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+/*--------------------------------------------------------------
+# Section Titles
+--------------------------------------------------------------*/
+.section-title {
+  text-align: center;
+  padding-bottom: 60px;
+  position: relative;
+}
+
+.section-title span {
+  font-size: 14px;
+  font-weight: 500;
+  padding: 0;
+  color: var(--color-verde);
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.section-title h2 {
+  font-size: 36px;
+  font-weight: 700;
+  margin: 10px 0 0 0;
+}
+
+.section-title p {
+  color: rgba(255, 255, 255, 0.6);
+  margin: 10px 0 0 0;
+}
+
+/*--------------------------------------------------------------
+# Sections
+--------------------------------------------------------------*/
+section {
+  padding: 80px 0;
+  overflow: clip;
+}
+
+/*--------------------------------------------------------------
+# About Section
+--------------------------------------------------------------*/
+.about .content h3 {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+  text-transform: uppercase;
+  color: var(--color-verde);
+}
+
+.about .content p {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.8;
+}
+
+.about .content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.about .content ul li {
+  display: flex;
+  align-items: flex-start;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.about .content ul li:last-child {
+  border-bottom: none;
+}
+
+.about .content ul i {
+  font-size: 24px;
+  color: var(--color-violeta);
+  margin-right: 20px;
+  flex-shrink: 0;
+  background: rgba(189, 120, 255, 0.1);
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+}
+
+.about .content ul h5 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.about .content ul p {
+  margin: 0;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.about img {
+  border-radius: 8px;
+  border: 3px solid var(--color-violeta);
+  box-shadow: 0 20px 40px rgba(189, 120, 255, 0.2);
+}
+
+/*--------------------------------------------------------------
+# Services/Videos Section
+--------------------------------------------------------------*/
+.services .card {
+  background: var(--surface-color);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+.services .card:hover {
+  transform: translateY(-10px);
+  border-color: var(--color-violeta);
+  box-shadow: 0 20px 40px rgba(189, 120, 255, 0.2);
+}
+
+.services .card-img {
+  overflow: hidden;
+  aspect-ratio: 16/9;
+}
+
+.services .card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.services .card:hover .card-img img {
+  transform: scale(1.1);
+}
+
+.services .card h3 {
+  font-size: 20px;
+  font-weight: 600;
+  padding: 20px 20px 0 20px;
+  margin: 0;
+}
+
+.services .card h3 a {
+  color: var(--heading-color);
+}
+
+.services .card h3 a:hover {
+  color: var(--color-violeta);
+}
+
+.services .card p {
+  padding: 10px 20px 20px 20px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+}
+
+.services .card .card-date {
+  padding: 0 20px;
+  font-size: 12px;
+  color: var(--color-verde);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/*--------------------------------------------------------------
+# Call To Action Section
+--------------------------------------------------------------*/
+.call-to-action {
+  position: relative;
+  padding: 100px 0;
+  background: linear-gradient(135deg, rgba(189, 120, 255, 0.1) 0%, rgba(59, 255, 158, 0.05) 100%);
+  border-top: 1px solid rgba(189, 120, 255, 0.3);
+  border-bottom: 1px solid rgba(189, 120, 255, 0.3);
+}
+
+.call-to-action h3 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.call-to-action p {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.call-to-action .cta-btn {
+  background: var(--color-violeta);
+  color: var(--color-negro);
+  padding: 12px 30px;
+  border-radius: 4px;
+  font-weight: 600;
+  display: inline-block;
+  transition: all 0.3s;
+}
+
+.call-to-action .cta-btn:hover {
+  background: var(--color-verde);
+}
+
+/*--------------------------------------------------------------
+# Features Section
+--------------------------------------------------------------*/
+.features .features-item {
+  padding: 40px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.features .features-item:last-child {
+  border-bottom: none;
+}
+
+.features img {
+  border-radius: 8px;
+  border: 2px solid rgba(189, 120, 255, 0.3);
+}
+
+.features h3 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.features p {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.features ul {
+  list-style: none;
+  padding: 0;
+}
+
+.features ul li {
+  padding: 8px 0;
+  display: flex;
+  align-items: center;
+}
+
+.features ul li i {
+  color: var(--color-verde);
+  margin-right: 10px;
+}
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+.footer {
+  background: linear-gradient(180deg, var(--background-color) 0%, #0a0a15 100%);
+  border-top: 1px solid rgba(189, 120, 255, 0.2);
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  padding: 60px 0 30px 0;
+}
+
+.footer .footer-about .logo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.footer .footer-about .logo img {
+  max-height: 40px;
+  margin-right: 10px;
+}
+
+.footer .footer-about .logo span {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-violeta);
+}
+
+.footer .footer-links h4,
+.footer .footer-contact h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.footer .footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer .footer-links ul li {
+  padding: 8px 0;
+}
+
+.footer .footer-links ul a {
+  color: rgba(255, 255, 255, 0.6);
+  transition: color 0.3s;
+}
+
+.footer .footer-links ul a:hover {
+  color: var(--color-violeta);
+}
+
+.footer .social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.7);
+  margin-right: 10px;
+  transition: all 0.3s;
+}
+
+.footer .social-links a:hover {
+  background: var(--color-violeta);
+  color: var(--color-negro);
+}
+
+.footer .copyright {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+}
+
+/*--------------------------------------------------------------
+# Page Title
+--------------------------------------------------------------*/
+.page-title {
+  padding: 160px 0 60px 0;
+  position: relative;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a0a2e 100%);
+}
+
+.page-title::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 50%, rgba(189, 120, 255, 0.15) 0%, transparent 70%);
+}
+
+.page-title h1 {
+  font-size: 42px;
+  font-weight: 700;
+  color: #fff;
+  position: relative;
+}
+
+.page-title p {
+  color: rgba(255, 255, 255, 0.7);
+  position: relative;
+}
+
+.page-title .breadcrumbs {
+  position: relative;
+}
+
+.page-title .breadcrumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0 0;
+}
+
+.page-title .breadcrumbs ol li {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.page-title .breadcrumbs ol li a {
+  color: var(--color-violeta);
+}
+
+.page-title .breadcrumbs ol li + li::before {
+  content: "/";
+  padding: 0 10px;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+/*--------------------------------------------------------------
+# Contact Section
+--------------------------------------------------------------*/
+.contact .info-item {
+  background: var(--surface-color);
+  padding: 30px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s;
+}
+
+.contact .info-item:hover {
+  border-color: var(--color-violeta);
+}
+
+.contact .info-item i {
+  font-size: 32px;
+  color: var(--color-violeta);
+  margin-bottom: 15px;
+}
+
+.contact .info-item h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.contact .info-item p {
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+}
+
+/*--------------------------------------------------------------
+# Scroll Top Button
+--------------------------------------------------------------*/
+.scroll-top {
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  right: 15px;
+  bottom: 15px;
+  z-index: 99999;
+  background-color: var(--color-violeta);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  transition: all 0.4s;
+}
+
+.scroll-top i {
+  font-size: 24px;
+  color: var(--color-negro);
+  line-height: 0;
+}
+
+.scroll-top:hover {
+  background-color: var(--color-verde);
+}
+
+.scroll-top.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+/*--------------------------------------------------------------
+# Language Switcher
+--------------------------------------------------------------*/
+.lang-switcher {
+  display: flex;
+  gap: 5px;
+  margin-left: 20px;
+}
+
+.lang-switcher button {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.6);
+  padding: 4px 10px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.3s;
+  border-radius: 4px;
+}
+
+.lang-switcher button:hover {
+  border-color: var(--color-violeta);
+  color: var(--color-violeta);
+}
+
+.lang-switcher button.active {
+  background: var(--color-violeta);
+  border-color: var(--color-violeta);
+  color: var(--color-negro);
+}
+
+/*--------------------------------------------------------------
+# Responsive
+--------------------------------------------------------------*/
+@media (max-width: 768px) {
+  .hero h2 {
+    font-size: 32px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  section {
+    padding: 60px 0;
+  }
+
+  .section-title h2 {
+    font-size: 28px;
+  }
+}

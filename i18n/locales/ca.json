@@ -1,0 +1,109 @@
+{
+  "nav": {
+    "home": "Inici",
+    "about": "Nosaltres",
+    "videos": "Vídeos",
+    "contact": "Contacte",
+    "watchYoutube": "Anar a YouTube"
+  },
+  "hero": {
+    "title": "La Casa de la Hormiga",
+    "subtitle": "Live Sessions",
+    "description": "Gravacions audiovisuals de música en viu a Barcelona",
+    "cta": "Veure vídeos"
+  },
+  "home": {
+    "featured": "Vídeos destacats",
+    "featuredDescription": "Una selecció de les nostres gravacions més especials",
+    "viewAll": "Veure tots els vídeos",
+    "whatWeDo": "Què fem",
+    "whatWeDoText": "A La Casa de la Hormiga realitzem gravacions audiovisuals de concerts reals, en viu i amb públic. Sempre intentem interferir el mínim possible en l'experiència dels qui hi assisteixen: la prioritat és la música i el moment, no la gravació.",
+    "mission": "La nostra missió",
+    "missionText": "Som un projecte impulsat principalment per migrants, amb un fort compromís per visibilitzar la diversitat cultural que transita la ciutat. Busquem capturar l'escena musical de Barcelona per mostrar l'experiència autèntica que es viu a cada concert."
+  },
+  "about": {
+    "title": "Qui som",
+    "intro": "La Casa de la Hormiga és un projecte que neix de la passió per capturar l'experiència autèntica de la música en viu a Barcelona. A través de gravacions audiovisuals, documentem artistes de diversos estils i orígens en espais reals de la ciutat.",
+    "team": "Som un grup d'amics i amigues que compartim l'amor per la música, el visual i el tècnic. L'especial del nostre projecte és la col·laboració orgànica i l'intercanvi de coneixements: cada persona aporta des del seu lloc, i junts creixem i creem.",
+    "historyTitle": "Història del projecte",
+    "history": "La Casa de la Hormiga va néixer el 2022, de manera molt orgànica, quan un amic de la infància —enginyer de so— es va mudar des de Buenos Aires a Barcelona. En aquell moment, no sabíem res sobre audiovisuals, però teníem moltes ganes d'aprendre.",
+    "historyGrowth": "El 2024 vam fer un salt cap enfora i vam començar a gravar a sales de concerts de Barcelona com Diobar, Rock n Trini, Absenta del Raval i Sala Wolf. També vam tenir l'honor de gravar artistes reconeguts com Mi Amigo Invencible, Pyramides, Leo García i Manza, entre molts altres.",
+    "today": "Avui, el 2025, continuem creixent. Ja hem publicat més de 20 vídeos i tenim una gran quantitat de material en procés. El projecte s'ha convertit en una veritable escola col·lectiva.",
+    "valuesTitle": "Els nostres valors",
+    "value1Title": "Autenticitat",
+    "value1Text": "Busquem capturar la música i l'art tal com són, en la seva expressió més real i sincera.",
+    "value2Title": "Professionalitat",
+    "value2Text": "Ens comprometem a treballar amb serietat i calidesa, generant un ambient de confiança.",
+    "value3Title": "Diversitat",
+    "value3Text": "Rebutgem qualsevol forma de discriminació. La nostra comunitat es funda en la inclusió i el respecte."
+  },
+  "videos": {
+    "title": "Els nostres vídeos",
+    "description": "Totes les nostres gravacions de música en viu",
+    "watchOnYoutube": "Veure a YouTube",
+    "allVideos": "Tots els vídeos"
+  },
+  "contact": {
+    "title": "Contacte",
+    "description": "Vols col·laborar amb nosaltres?",
+    "artistsTitle": "Artistes",
+    "artistsText": "Estem oberts a propostes d'artistes que vulguin gravar amb nosaltres. No tenim criteris tècnics ni requisits específics: busquem treballar amb persones que comparteixin els nostres valors.",
+    "spacesTitle": "Espais",
+    "spacesText": "Actualment gravem exclusivament a sales de concerts i espais reals, amb públic present. Si gestions un espai i vols col·laborar, sempre estem interessats a sumar noves localitzacions.",
+    "teamTitle": "Equip tècnic",
+    "teamText": "Ens encanta compartir el que sabem i aprendre d'altres persones. Si t'interessa el món de la gravació audiovisual i la música en viu, pots acostar-te.",
+    "email": "Escriu-nos",
+    "formTitle": "Envia'ns un missatge",
+    "form": {
+      "name": "Nom",
+      "namePlaceholder": "El teu nom",
+      "email": "Email",
+      "emailPlaceholder": "el.teu{'@'}email.com",
+      "subject": "Motiu",
+      "subjectPlaceholder": "Selecciona un motiu",
+      "subjectArtist": "Sóc artista i vull gravar",
+      "subjectVenue": "Gestiono un espai",
+      "subjectTeam": "Vull unir-me a l'equip",
+      "subjectOther": "Altre",
+      "message": "Missatge",
+      "messagePlaceholder": "Explica'ns el teu projecte o proposta...",
+      "send": "Enviar missatge",
+      "sending": "Enviant...",
+      "success": "Missatge enviat! Et respondrem aviat.",
+      "error": "Error en enviar. Si us plau, torna-ho a provar."
+    }
+  },
+  "footer": {
+    "description": "Gravacions audiovisuals de música en viu a Barcelona. Documentem l'escena musical amb passió i autenticitat.",
+    "links": "Enllaços",
+    "social": "Xarxes socials",
+    "copyright": "Tots els drets reservats"
+  },
+  "videoData": {
+    "pyramides": {
+      "title": "Pyramides",
+      "date": "5 de maig de 2024",
+      "description": "Un dels primers concerts que vam gravar fora del pis. Va ser a més el debut de la nova formació de la banda a Barcelona."
+    },
+    "manza": {
+      "title": "Manza",
+      "date": "29 de setembre de 2024",
+      "description": "Músic històric i referent de l'escena argentina, Manza ens va regalar un concert espontani, gairebé improvisat."
+    },
+    "galeriaInterior": {
+      "title": "Galería Interior",
+      "date": "29 de juliol de 2023",
+      "description": "Va ser un dels primers concerts que vam gravar i un dels més emocionants."
+    },
+    "sergioPangaro": {
+      "title": "Sergio Pángaro",
+      "date": "6 d'octubre de 2024",
+      "description": "Un show diferent perquè va ser, a més de musical, també performàtic."
+    },
+    "gilDeGils": {
+      "title": "Gil de Gils",
+      "date": "24 de febrer de 2024",
+      "description": "Concert potent i tècnic en un espai autogestionat, divers i comunitari."
+    }
+  }
+}

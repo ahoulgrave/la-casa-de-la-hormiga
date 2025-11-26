@@ -1,0 +1,109 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "videos": "Videos",
+    "contact": "Contact",
+    "watchYoutube": "Go to YouTube"
+  },
+  "hero": {
+    "title": "La Casa de la Hormiga",
+    "subtitle": "Live Sessions",
+    "description": "Audiovisual recordings of live music in Barcelona",
+    "cta": "Watch videos"
+  },
+  "home": {
+    "featured": "Featured videos",
+    "featuredDescription": "A selection of our most special recordings",
+    "viewAll": "View all videos",
+    "whatWeDo": "What we do",
+    "whatWeDoText": "At La Casa de la Hormiga we make audiovisual recordings of real concerts, live and with an audience. We always try to interfere as little as possible with the experience of those attending: the priority is the music and the moment, not the recording.",
+    "mission": "Our mission",
+    "missionText": "We are a project driven mainly by migrants, with a strong commitment to making visible the cultural diversity that passes through the city. We seek to capture Barcelona's music scene to show the authentic experience of each concert."
+  },
+  "about": {
+    "title": "Who we are",
+    "intro": "La Casa de la Hormiga is a project born from the passion for capturing the authentic experience of live music in Barcelona. Through audiovisual recordings, we document artists of diverse styles and origins in real spaces of the city.",
+    "team": "We are a group of friends who share the love for music, visuals and technology. What makes our project special is the organic collaboration and exchange of knowledge: each person contributes from their place, and together we grow and create.",
+    "historyTitle": "Project history",
+    "history": "La Casa de la Hormiga was born in 2022, in a very organic way, when a childhood friend —sound engineer— moved from Buenos Aires to Barcelona. At that time, we knew nothing about audiovisuals, but we were eager to learn.",
+    "historyGrowth": "In 2024 we took a leap forward and started recording in Barcelona concert halls like Diobar, Rock n Trini, Absenta del Raval and Sala Wolf. We also had the honor of recording renowned artists like Mi Amigo Invencible, Pyramides, Leo García and Manza, among many others.",
+    "today": "Today, in 2025, we continue to grow. We have already published more than 20 videos and have a large amount of material in process. The project has become a true collective school.",
+    "valuesTitle": "Our values",
+    "value1Title": "Authenticity",
+    "value1Text": "We seek to capture music and art as they are, in their most real and sincere expression.",
+    "value2Title": "Professionalism",
+    "value2Text": "We are committed to working with seriousness and warmth, creating an atmosphere of trust.",
+    "value3Title": "Diversity",
+    "value3Text": "We reject any form of discrimination. Our community is founded on inclusion and respect."
+  },
+  "videos": {
+    "title": "Our videos",
+    "description": "All our live music recordings",
+    "watchOnYoutube": "Watch on YouTube",
+    "allVideos": "All videos"
+  },
+  "contact": {
+    "title": "Contact",
+    "description": "Want to collaborate with us?",
+    "artistsTitle": "Artists",
+    "artistsText": "We are open to proposals from artists who want to record with us. We have no technical criteria or specific requirements: we seek to work with people who share our values.",
+    "spacesTitle": "Venues",
+    "spacesText": "We currently record exclusively in concert halls and real spaces, with an audience present. If you manage a venue and want to collaborate, we are always interested in adding new locations.",
+    "teamTitle": "Technical team",
+    "teamText": "We love to share what we know and learn from others. If you are interested in the world of audiovisual recording and live music, you can approach us.",
+    "email": "Write to us",
+    "formTitle": "Send us a message",
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "Your name",
+      "email": "Email",
+      "emailPlaceholder": "your{'@'}email.com",
+      "subject": "Subject",
+      "subjectPlaceholder": "Select a subject",
+      "subjectArtist": "I'm an artist and want to record",
+      "subjectVenue": "I manage a venue",
+      "subjectTeam": "I want to join the team",
+      "subjectOther": "Other",
+      "message": "Message",
+      "messagePlaceholder": "Tell us about your project or proposal...",
+      "send": "Send message",
+      "sending": "Sending...",
+      "success": "Message sent! We'll get back to you soon.",
+      "error": "Error sending. Please try again."
+    }
+  },
+  "footer": {
+    "description": "Audiovisual recordings of live music in Barcelona. We document the music scene with passion and authenticity.",
+    "links": "Links",
+    "social": "Social media",
+    "copyright": "All rights reserved"
+  },
+  "videoData": {
+    "pyramides": {
+      "title": "Pyramides",
+      "date": "May 5, 2024",
+      "description": "One of the first concerts we recorded outside our flat. It was also the debut of the band's new formation in Barcelona."
+    },
+    "manza": {
+      "title": "Manza",
+      "date": "September 29, 2024",
+      "description": "Historic musician and reference of the Argentine scene, Manza gave us a spontaneous, almost improvised concert."
+    },
+    "galeriaInterior": {
+      "title": "Galería Interior",
+      "date": "July 29, 2023",
+      "description": "It was one of the first concerts we recorded and one of the most exciting."
+    },
+    "sergioPangaro": {
+      "title": "Sergio Pángaro",
+      "date": "October 6, 2024",
+      "description": "A different show because it was, besides musical, also performative."
+    },
+    "gilDeGils": {
+      "title": "Gil de Gils",
+      "date": "February 24, 2024",
+      "description": "Powerful and technical concert in a self-managed, diverse and community space."
+    }
+  }
+}

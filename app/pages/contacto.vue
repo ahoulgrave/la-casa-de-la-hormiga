@@ -122,24 +122,6 @@
           <!-- Contact Info -->
           <div class="col-lg-5" data-aos="fade-up" data-aos-delay="200">
             <div class="contact-info-card">
-              <h3>{{ $t('contact.email') }}</h3>
-              <div class="contact-method">
-                <i class="bi bi-envelope"></i>
-                <div>
-                  <h4>Email</h4>
-                  <a href="mailto:lacasadelahormiga.bcn@gmail.com">lacasadelahormiga.bcn@gmail.com</a>
-                </div>
-              </div>
-              <div class="contact-method">
-                <i class="bi bi-geo-alt"></i>
-                <div>
-                  <h4>Barcelona</h4>
-                  <p>España</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="contact-info-card mt-4">
               <h3>{{ $t('footer.social') }}</h3>
               <div class="social-links-large">
                 <a href="https://www.youtube.com/@lacasadelahormiga" target="_blank" rel="noopener" class="youtube">
@@ -150,6 +132,13 @@
                   <i class="bi bi-instagram"></i>
                   <span>Instagram</span>
                 </a>
+              </div>
+              <div class="contact-method mt-4">
+                <i class="bi bi-geo-alt"></i>
+                <div>
+                  <h4>{{ $t('location.city') }}</h4>
+                  <p>{{ $t('location.country') }}</p>
+                </div>
               </div>
             </div>
           </div>
@@ -164,8 +153,8 @@
           <div class="col-lg-8 text-center" data-aos="fade-up">
             <div class="location-card">
               <i class="bi bi-geo-alt-fill"></i>
-              <h3>Barcelona</h3>
-              <p>Grabamos en diversas salas de conciertos de la ciudad: Diobar, Rock n Trini, Absenta del Raval, Sala Wolf y más.</p>
+              <h3>{{ $t('location.city') }}</h3>
+              <p>{{ $t('location.venuesDescription') }}</p>
             </div>
           </div>
         </div>

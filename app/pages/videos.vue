@@ -17,7 +17,7 @@
     <!-- Videos Section -->
     <section id="videos" class="services section">
       <div class="container section-title" data-aos="fade-up">
-        <span>Live Sessions</span>
+        <span>{{ $t('footer.liveSessions') }}</span>
         <h2>{{ $t('videos.allVideos') }}</h2>
       </div>
 
@@ -43,7 +43,7 @@
           <p class="mb-4" style="color: rgba(255,255,255,0.7);">{{ $t('videos.watchOnYoutube') }}</p>
           <a href="https://www.youtube.com/@lacasadelahormiga" target="_blank" rel="noopener" class="btn-youtube">
             <i class="bi bi-youtube me-2"></i>
-            YouTube Channel
+            {{ $t('videos.youtubeChannel') }}
           </a>
         </div>
       </div>

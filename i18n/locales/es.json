@@ -29,6 +29,7 @@
     "history": "La Casa de la Hormiga nació en 2022, de manera muy orgánica, cuando un amigo de la infancia —ingeniero de sonido— se mudó desde Buenos Aires a Barcelona. En ese momento, no sabíamos nada sobre audiovisuales, pero teníamos muchas ganas de aprender.",
     "historyGrowth": "En 2024 dimos un salto hacia afuera y comenzamos a grabar en salas de conciertos de Barcelona como Diobar, Rock n Trini, Absenta del Raval y Sala Wolf. También tuvimos el honor de grabar a artistas reconocidos como Mi Amigo Invencible, Pyramides, Leo García y Manza, entre muchos otros.",
     "today": "Hoy, en 2025, seguimos creciendo. Ya publicamos más de 20 videos y tenemos una gran cantidad de material en proceso. El proyecto se ha convertido en una verdadera escuela colectiva.",
+    "todayTitle": "Hoy",
     "valuesTitle": "Nuestros valores",
     "value1Title": "Autenticidad",
     "value1Text": "Buscamos capturar la música y el arte tal como son, en su expresión más real y sincera.",
@@ -41,7 +42,8 @@
     "title": "Nuestros videos",
     "description": "Todas nuestras grabaciones de música en vivo",
     "watchOnYoutube": "Ver en YouTube",
-    "allVideos": "Todos los videos"
+    "allVideos": "Todos los videos",
+    "youtubeChannel": "Canal de YouTube"
   },
   "contact": {
     "title": "Contacto",
@@ -77,7 +79,24 @@
     "description": "Grabaciones audiovisuales de música en vivo en Barcelona. Documentamos la escena musical con pasión y autenticidad.",
     "links": "Enlaces",
     "social": "Redes sociales",
-    "copyright": "Todos los derechos reservados"
+    "copyright": "Todos los derechos reservados",
+    "liveSessions": "Live Sessions"
+  },
+  "stats": {
+    "videos": "Videos",
+    "since": "Desde",
+    "barcelona": "Barcelona",
+    "liveMusic": "Live Music"
+  },
+  "location": {
+    "city": "Barcelona",
+    "country": "España",
+    "venuesDescription": "Grabamos en diversas salas de conciertos de la ciudad: Diobar, Rock n Trini, Absenta del Raval, Sala Wolf y más."
+  },
+  "history": {
+    "beginnings": "Los inicios",
+    "growth": "El crecimiento",
+    "principles": "Principios"
   },
   "videoData": {
     "pyramides": {

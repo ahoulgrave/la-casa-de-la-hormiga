@@ -29,6 +29,7 @@
     "history": "La Casa de la Hormiga was born in 2022, in a very organic way, when a childhood friend —sound engineer— moved from Buenos Aires to Barcelona. At that time, we knew nothing about audiovisuals, but we were eager to learn.",
     "historyGrowth": "In 2024 we took a leap forward and started recording in Barcelona concert halls like Diobar, Rock n Trini, Absenta del Raval and Sala Wolf. We also had the honor of recording renowned artists like Mi Amigo Invencible, Pyramides, Leo García and Manza, among many others.",
     "today": "Today, in 2025, we continue to grow. We have already published more than 20 videos and have a large amount of material in process. The project has become a true collective school.",
+    "todayTitle": "Today",
     "valuesTitle": "Our values",
     "value1Title": "Authenticity",
     "value1Text": "We seek to capture music and art as they are, in their most real and sincere expression.",
@@ -41,7 +42,8 @@
     "title": "Our videos",
     "description": "All our live music recordings",
     "watchOnYoutube": "Watch on YouTube",
-    "allVideos": "All videos"
+    "allVideos": "All videos",
+    "youtubeChannel": "YouTube Channel"
   },
   "contact": {
     "title": "Contact",
@@ -77,7 +79,24 @@
     "description": "Audiovisual recordings of live music in Barcelona. We document the music scene with passion and authenticity.",
     "links": "Links",
     "social": "Social media",
-    "copyright": "All rights reserved"
+    "copyright": "All rights reserved",
+    "liveSessions": "Live Sessions"
+  },
+  "stats": {
+    "videos": "Videos",
+    "since": "Since",
+    "barcelona": "Barcelona",
+    "liveMusic": "Live Music"
+  },
+  "location": {
+    "city": "Barcelona",
+    "country": "Spain",
+    "venuesDescription": "We record in various concert venues around the city: Diobar, Rock n Trini, Absenta del Raval, Sala Wolf and more."
+  },
+  "history": {
+    "beginnings": "The beginnings",
+    "growth": "The growth",
+    "principles": "Principles"
   },
   "videoData": {
     "pyramides": {

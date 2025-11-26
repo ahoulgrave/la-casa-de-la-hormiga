@@ -44,7 +44,7 @@
             <img src="/img/manza_1.jpg" class="img-fluid" alt="Historia" />
           </div>
           <div class="col-md-7" data-aos="fade-up" data-aos-delay="100">
-            <h3>Los inicios</h3>
+            <h3>{{ $t('history.beginnings') }}</h3>
             <p>{{ $t('about.history') }}</p>
           </div>
         </div>
@@ -54,7 +54,7 @@
             <img src="/img/pyramides_1.jpg" class="img-fluid" alt="Crecimiento" />
           </div>
           <div class="col-md-7 order-2 order-md-1" data-aos="fade-up" data-aos-delay="200">
-            <h3>El crecimiento</h3>
+            <h3>{{ $t('history.growth') }}</h3>
             <p>{{ $t('about.historyGrowth') }}</p>
           </div>
         </div>
@@ -64,7 +64,7 @@
             <img src="/img/nadie_lo_quiere_1.jpg" class="img-fluid" alt="Hoy" />
           </div>
           <div class="col-md-7" data-aos="fade-up">
-            <h3>Hoy</h3>
+            <h3>{{ $t('about.todayTitle') }}</h3>
             <p>{{ $t('about.today') }}</p>
           </div>
         </div>
@@ -74,7 +74,7 @@
     <!-- Values Section -->
     <section id="values" class="about section">
       <div class="container section-title" data-aos="fade-up">
-        <span>Principios</span>
+        <span>{{ $t('history.principles') }}</span>
         <h2>{{ $t('about.valuesTitle') }}</h2>
       </div>
 

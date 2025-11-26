@@ -5,7 +5,7 @@
       <div class="container">
         <div class="row gy-4 d-flex justify-content-between">
           <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center" data-aos="fade-up">
-            <h2>{{ $t('hero.title') }} <span>Live Sessions</span></h2>
+            <h2>{{ $t('hero.title') }} <span>{{ $t('hero.subtitle') }}</span></h2>
             <p>{{ $t('hero.description') }}</p>
 
             <div class="d-flex gap-3 mb-4" data-aos="fade-up" data-aos-delay="200">
@@ -21,25 +21,25 @@
               <div class="col-lg-3 col-6">
                 <div class="stats-item text-center w-100 h-100">
                   <span>20+</span>
-                  <p>Videos</p>
+                  <p>{{ $t('stats.videos') }}</p>
                 </div>
               </div>
               <div class="col-lg-3 col-6">
                 <div class="stats-item text-center w-100 h-100">
                   <span>2022</span>
-                  <p>Desde</p>
+                  <p>{{ $t('stats.since') }}</p>
                 </div>
               </div>
               <div class="col-lg-3 col-6">
                 <div class="stats-item text-center w-100 h-100">
                   <span><i class="bi bi-geo-alt-fill"></i></span>
-                  <p>Barcelona</p>
+                  <p>{{ $t('stats.barcelona') }}</p>
                 </div>
               </div>
               <div class="col-lg-3 col-6">
                 <div class="stats-item text-center w-100 h-100">
                   <span><i class="bi bi-heart-fill"></i></span>
-                  <p>Live Music</p>
+                  <p>{{ $t('stats.liveMusic') }}</p>
                 </div>
               </div>
             </div>
@@ -95,7 +95,7 @@
     <!-- Services/Videos Section -->
     <section id="services" class="services section">
       <div class="container section-title" data-aos="fade-up">
-        <span>Live Sessions</span>
+        <span>{{ $t('footer.liveSessions') }}</span>
         <h2>{{ $t('home.featured') }}</h2>
         <p>{{ $t('home.featuredDescription') }}</p>
       </div>

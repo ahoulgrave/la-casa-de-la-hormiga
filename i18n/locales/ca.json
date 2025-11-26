@@ -29,6 +29,7 @@
     "history": "La Casa de la Hormiga va néixer el 2022, de manera molt orgànica, quan un amic de la infància —enginyer de so— es va mudar des de Buenos Aires a Barcelona. En aquell moment, no sabíem res sobre audiovisuals, però teníem moltes ganes d'aprendre.",
     "historyGrowth": "El 2024 vam fer un salt cap enfora i vam començar a gravar a sales de concerts de Barcelona com Diobar, Rock n Trini, Absenta del Raval i Sala Wolf. També vam tenir l'honor de gravar artistes reconeguts com Mi Amigo Invencible, Pyramides, Leo García i Manza, entre molts altres.",
     "today": "Avui, el 2025, continuem creixent. Ja hem publicat més de 20 vídeos i tenim una gran quantitat de material en procés. El projecte s'ha convertit en una veritable escola col·lectiva.",
+    "todayTitle": "Avui",
     "valuesTitle": "Els nostres valors",
     "value1Title": "Autenticitat",
     "value1Text": "Busquem capturar la música i l'art tal com són, en la seva expressió més real i sincera.",
@@ -41,7 +42,8 @@
     "title": "Els nostres vídeos",
     "description": "Totes les nostres gravacions de música en viu",
     "watchOnYoutube": "Veure a YouTube",
-    "allVideos": "Tots els vídeos"
+    "allVideos": "Tots els vídeos",
+    "youtubeChannel": "Canal de YouTube"
   },
   "contact": {
     "title": "Contacte",
@@ -77,7 +79,24 @@
     "description": "Gravacions audiovisuals de música en viu a Barcelona. Documentem l'escena musical amb passió i autenticitat.",
     "links": "Enllaços",
     "social": "Xarxes socials",
-    "copyright": "Tots els drets reservats"
+    "copyright": "Tots els drets reservats",
+    "liveSessions": "Live Sessions"
+  },
+  "stats": {
+    "videos": "Vídeos",
+    "since": "Des de",
+    "barcelona": "Barcelona",
+    "liveMusic": "Live Music"
+  },
+  "location": {
+    "city": "Barcelona",
+    "country": "Espanya",
+    "venuesDescription": "Gravem a diverses sales de concerts de la ciutat: Diobar, Rock n Trini, Absenta del Raval, Sala Wolf i més."
+  },
+  "history": {
+    "beginnings": "Els inicis",
+    "growth": "El creixement",
+    "principles": "Principis"
   },
   "videoData": {
     "pyramides": {

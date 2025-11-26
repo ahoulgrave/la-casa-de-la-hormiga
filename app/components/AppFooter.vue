@@ -30,7 +30,7 @@
         </div>
 
         <div class="col-lg-2 col-6 footer-links">
-          <h4>Live Sessions</h4>
+          <h4>{{ $t('footer.liveSessions') }}</h4>
           <ul>
             <li><a href="https://www.youtube.com/watch?v=qNz-JDd6_Eo" target="_blank">Pyramides</a></li>
             <li><a href="https://www.youtube.com/watch?v=C1D30TS0hmY" target="_blank">Manza</a></li>
@@ -41,11 +41,10 @@
 
         <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
           <h4>{{ $t('nav.contact') }}</h4>
-          <p><i class="bi bi-geo-alt"></i> Barcelona, España</p>
-          <p class="mt-2">
-            <strong>Email:</strong><br>
-            <a href="mailto:lacasadelahormiga.bcn@gmail.com">lacasadelahormiga.bcn@gmail.com</a>
-          </p>
+          <p><i class="bi bi-geo-alt"></i> {{ $t('location.city') }}, {{ $t('location.country') }}</p>
+          <NuxtLink :to="localePath('/contacto')" class="btn-contact-footer mt-2">
+            <i class="bi bi-envelope me-2"></i>{{ $t('contact.formTitle') }}
+          </NuxtLink>
         </div>
 
       </div>
@@ -54,7 +53,7 @@
     <div class="container copyright text-center mt-4">
       <p>© {{ new Date().getFullYear() }} <strong class="px-1 sitename">La Casa de la Hormiga</strong> {{ $t('footer.copyright') }}</p>
       <div class="credits">
-        Barcelona - Live Sessions
+        {{ $t('location.city') }} - {{ $t('footer.liveSessions') }}
       </div>
     </div>
 
@@ -82,5 +81,23 @@ const localePath = useLocalePath()
 
 .footer-contact a:hover {
   color: var(--color-violeta);
+}
+
+.btn-contact-footer {
+  display: inline-flex;
+  align-items: center;
+  background: var(--color-violeta);
+  color: #000;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.btn-contact-footer:hover {
+  background: var(--color-verde);
+  color: #000;
 }
 </style>

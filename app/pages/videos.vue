@@ -3,8 +3,8 @@
     <!-- Page Title -->
     <div class="page-title dark-background" data-aos="fade">
       <div class="container position-relative">
-        <h1>{{ $t('videos.title') }}</h1>
-        <p>{{ $t('videos.description') }}</p>
+        <h1>{{ t('title') }}</h1>
+        <p>{{ t('description') }}</p>
         <nav class="breadcrumbs">
           <ol>
             <li><NuxtLink :to="localePath('/')">{{ $t('nav.home') }}</NuxtLink></li>
@@ -17,8 +17,8 @@
     <!-- Videos Section -->
     <section id="videos" class="services section">
       <div class="container section-title" data-aos="fade-up">
-        <span>{{ $t('footer.liveSessions') }}</span>
-        <h2>{{ $t('videos.allVideos') }}</h2>
+        <span>{{ $t('common.liveSessions') }}</span>
+        <h2>{{ t('allVideos') }}</h2>
       </div>
 
       <div class="container">
@@ -40,10 +40,10 @@
 
         <!-- YouTube Channel CTA -->
         <div class="text-center mt-5" data-aos="fade-up">
-          <p class="mb-4" style="color: rgba(255,255,255,0.7);">{{ $t('videos.watchOnYoutube') }}</p>
+          <p class="mb-4" style="color: rgba(255,255,255,0.7);">{{ t('watchOnYoutube') }}</p>
           <a :href="socialLinks.youtube" target="_blank" rel="noopener" class="btn-youtube">
             <FaIcon :icon="['fab', 'youtube']" class="me-2" />
-            {{ $t('videos.youtubeChannel') }}
+            {{ t('youtubeChannel') }}
           </a>
         </div>
       </div>
@@ -82,7 +82,7 @@
           <div class="video-actions">
             <a :href="selectedVideo.youtubeUrl" target="_blank" rel="noopener" class="btn-watch-youtube">
               <FaIcon :icon="['fab', 'youtube']" />
-              Ver en YouTube
+              {{ t('watchOnYoutube') }}
             </a>
           </div>
         </div>
@@ -95,7 +95,8 @@
 import { videosData, type VideoData } from '~/data/videos'
 import { socialLinks } from '~/data/social'
 
-const { locale } = useI18n()
+const { t, locale } = useI18n({ useScope: 'local' })
+const { t: $t } = useI18n()
 const localePath = useLocalePath()
 
 useHead({
@@ -490,3 +491,26 @@ onMounted(() => {
   }
 }
 </style>
+
+<i18n lang="yaml">
+es:
+  title: Nuestros videos
+  description: Todas nuestras grabaciones de música en vivo
+  allVideos: Todos los videos
+  watchOnYoutube: Ver en YouTube
+  youtubeChannel: Canal de YouTube
+
+en:
+  title: Our videos
+  description: All our live music recordings
+  allVideos: All videos
+  watchOnYoutube: Watch on YouTube
+  youtubeChannel: YouTube Channel
+
+ca:
+  title: Els nostres vídeos
+  description: Totes les nostres gravacions de música en viu
+  allVideos: Tots els vídeos
+  watchOnYoutube: Veure a YouTube
+  youtubeChannel: Canal de YouTube
+</i18n>

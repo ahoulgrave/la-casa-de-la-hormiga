@@ -5,12 +5,12 @@
       <div class="container">
         <div class="row gy-4 d-flex justify-content-between">
           <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center" data-aos="fade-up">
-            <h2>{{ $t('hero.title') }} <span>{{ $t('hero.subtitle') }}</span></h2>
-            <p>{{ $t('hero.description') }}</p>
+            <h2>{{ t('heroTitle') }}<br><span>{{ t('heroSubtitle') }}</span></h2>
+            <p>{{ t('heroDescription') }}</p>
 
             <div class="d-flex gap-3 mb-4" data-aos="fade-up" data-aos-delay="200">
               <NuxtLink :to="localePath('/videos')" class="btn-getstarted">
-                {{ $t('hero.cta') }}
+                {{ t('heroCta') }}
               </NuxtLink>
               <a :href="socialLinks.youtube" target="_blank" rel="noopener" class="btn-getstarted btn-secondary">
                 <FaIcon :icon="['fab', 'youtube']" class="me-2" />YouTube
@@ -21,25 +21,25 @@
               <div class="col-lg-3 col-6">
                 <div class="stats-item text-center w-100 h-100">
                   <span>20+</span>
-                  <p>{{ $t('stats.videos') }}</p>
+                  <p>{{ t('statsVideos') }}</p>
                 </div>
               </div>
               <div class="col-lg-3 col-6">
                 <div class="stats-item text-center w-100 h-100">
                   <span>2022</span>
-                  <p>{{ $t('stats.since') }}</p>
+                  <p>{{ t('statsSince') }}</p>
                 </div>
               </div>
               <div class="col-lg-3 col-6">
                 <div class="stats-item text-center w-100 h-100">
                   <span><FaIcon icon="location-dot" /></span>
-                  <p>{{ $t('stats.barcelona') }}</p>
+                  <p>{{ t('statsBarcelona') }}</p>
                 </div>
               </div>
               <div class="col-lg-3 col-6">
                 <div class="stats-item text-center w-100 h-100">
                   <span><FaIcon icon="heart" /></span>
-                  <p>{{ $t('stats.liveMusic') }}</p>
+                  <p>{{ t('statsLiveMusic') }}</p>
                 </div>
               </div>
             </div>
@@ -61,28 +61,28 @@
           </div>
 
           <div class="col-lg-6 content order-last order-lg-first" data-aos="fade-up" data-aos-delay="100">
-            <h3>{{ $t('home.whatWeDo') }}</h3>
-            <p>{{ $t('home.whatWeDoText') }}</p>
+            <h3>{{ t('whatWeDo') }}</h3>
+            <p>{{ t('whatWeDoText') }}</p>
             <ul>
               <li>
                 <FaIcon icon="video" />
                 <div>
-                  <h5>{{ $t('about.value1Title') }}</h5>
-                  <p>{{ $t('about.value1Text') }}</p>
+                  <h5>{{ $t('values.authenticity') }}</h5>
+                  <p>{{ $t('values.authenticityText') }}</p>
                 </div>
               </li>
               <li>
                 <FaIcon icon="music" />
                 <div>
-                  <h5>{{ $t('about.value2Title') }}</h5>
-                  <p>{{ $t('about.value2Text') }}</p>
+                  <h5>{{ $t('values.professionalism') }}</h5>
+                  <p>{{ $t('values.professionalismText') }}</p>
                 </div>
               </li>
               <li>
                 <FaIcon icon="users" />
                 <div>
-                  <h5>{{ $t('about.value3Title') }}</h5>
-                  <p>{{ $t('about.value3Text') }}</p>
+                  <h5>{{ $t('values.diversity') }}</h5>
+                  <p>{{ $t('values.diversityText') }}</p>
                 </div>
               </li>
             </ul>
@@ -94,9 +94,9 @@
     <!-- Services/Videos Section -->
     <section id="services" class="services section">
       <div class="container section-title" data-aos="fade-up">
-        <span>{{ $t('footer.liveSessions') }}</span>
-        <h2>{{ $t('home.featured') }}</h2>
-        <p>{{ $t('home.featuredDescription') }}</p>
+        <span>{{ $t('common.liveSessions') }}</span>
+        <h2>{{ t('featured') }}</h2>
+        <p>{{ t('featuredDescription') }}</p>
       </div>
 
       <div class="container">
@@ -118,7 +118,7 @@
 
         <div class="text-center mt-5" data-aos="fade-up">
           <NuxtLink :to="localePath('/videos')" class="btn-getstarted">
-            {{ $t('home.viewAll') }}
+            {{ t('viewAll') }}
           </NuxtLink>
         </div>
       </div>
@@ -130,8 +130,8 @@
         <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="100">
           <div class="col-xl-10">
             <div class="text-center">
-              <h3>{{ $t('contact.description') }}</h3>
-              <p>{{ $t('contact.artistsText') }}</p>
+              <h3>{{ $t('cta.collaborate') }}</h3>
+              <p>{{ $t('cta.artistsText') }}</p>
               <NuxtLink :to="localePath('/contacto')" class="cta-btn">
                 {{ $t('nav.contact') }}
               </NuxtLink>
@@ -144,9 +144,9 @@
     <!-- Features Section -->
     <section id="features" class="features section">
       <div class="container section-title" data-aos="fade-up">
-        <span>{{ $t('home.mission') }}</span>
-        <h2>{{ $t('home.mission') }}</h2>
-        <p>{{ $t('home.missionText') }}</p>
+        <span>{{ t('mission') }}</span>
+        <h2>{{ t('mission') }}</h2>
+        <p>{{ t('missionText') }}</p>
       </div>
 
       <div class="container">
@@ -155,12 +155,8 @@
             <img src="/img/videos/lvz_silenciosa.jpg" class="img-fluid" alt="Galería Interior Live Session" />
           </div>
           <div class="col-md-7" data-aos="fade-up" data-aos-delay="100">
-            <h3>{{ $t('about.historyTitle') }}</h3>
-            <p class="fst-italic">{{ $t('about.history') }}</p>
-            <ul>
-              <li><FaIcon icon="check" /><span>{{ $t('about.historyGrowth') }}</span></li>
-              <li><FaIcon icon="check" /><span>{{ $t('about.today') }}</span></li>
-            </ul>
+            <h3>{{ t('historyTitle') }}</h3>
+            <p class="fst-italic">{{ t('historySummary') }}</p>
             <NuxtLink :to="localePath('/proyecto')" class="btn-getstarted mt-3">
               {{ $t('nav.about') }}
             </NuxtLink>
@@ -202,7 +198,7 @@
           <div class="video-actions">
             <a :href="selectedVideo.youtubeUrl" target="_blank" rel="noopener" class="btn-watch-youtube">
               <FaIcon :icon="['fab', 'youtube']" />
-              Ver en YouTube
+              {{ t('watchOnYoutube') }}
             </a>
           </div>
         </div>
@@ -215,7 +211,8 @@
 import { videosData, featuredVideoIds } from '~/data/videos'
 import { socialLinks } from '~/data/social'
 
-const { locale } = useI18n()
+const { t, locale } = useI18n({ useScope: 'local' })
+const { t: $t } = useI18n()
 const localePath = useLocalePath()
 
 interface Video {
@@ -519,7 +516,8 @@ onMounted(() => {
   border-radius: 4px;
   transition: 0.3s;
   font-weight: 600;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   text-decoration: none;
 }
 
@@ -556,5 +554,71 @@ onMounted(() => {
   .video-info {
     padding: 20px;
   }
+
+  #features .features-item .col-md-7 {
+    text-align: center;
+  }
 }
 </style>
+
+<i18n lang="yaml">
+es:
+  heroTitle: La Casa de la Hormiga
+  heroSubtitle: Live Sessions
+  heroDescription: Grabaciones audiovisuales de música en vivo en Barcelona
+  heroCta: Ver videos
+  statsVideos: Videos
+  statsSince: Desde
+  statsBarcelona: Barcelona
+  statsLiveMusic: Live Music
+  whatWeDo: Qué hacemos
+  whatWeDoText: En La Casa de la Hormiga realizamos grabaciones audiovisuales de conciertos reales, en vivo y con público. Siempre intentamos interferir lo menos posible en la experiencia de quienes asisten. La prioridad es la música y el momento, no la grabación.
+  featured: Videos destacados
+  featuredDescription: Una selección de nuestras grabaciones más especiales
+  viewAll: Ver todos los videos
+  mission: Nuestra misión
+  missionText: Somos un proyecto impulsado principalmente por migrantes, con un fuerte compromiso por visibilizar la diversidad cultural que transita la ciudad. Buscamos capturar la escena musical de Barcelona para mostrar la experiencia auténtica que se vive en cada concierto.
+  historyTitle: Historia del proyecto
+  historySummary: La Casa de la Hormiga nació en 2022, cuando dos amigos de Buenos Aires se encontraron en Barcelona. Empezaron con escasos recursos, con una cámara prestada y muchas ganas de aprender. Hoy ya publicamos más de 20 videos.
+  watchOnYoutube: Ver en YouTube
+
+en:
+  heroTitle: La Casa de la Hormiga
+  heroSubtitle: Live Sessions
+  heroDescription: Audiovisual recordings of live music in Barcelona
+  heroCta: Watch videos
+  statsVideos: Videos
+  statsSince: Since
+  statsBarcelona: Barcelona
+  statsLiveMusic: Live Music
+  whatWeDo: What we do
+  whatWeDoText: At La Casa de la Hormiga we make audiovisual recordings of real concerts, live and with an audience. We always try to interfere as little as possible with the experience of those attending. The priority is the music and the moment, not the recording.
+  featured: Featured videos
+  featuredDescription: A selection of our most special recordings
+  viewAll: View all videos
+  mission: Our mission
+  missionText: We are a project driven mainly by migrants, with a strong commitment to making visible the cultural diversity that passes through the city. We seek to capture Barcelona's music scene to show the authentic experience of each concert.
+  historyTitle: Project history
+  historySummary: La Casa de la Hormiga was born in 2022, when a childhood friend —sound engineer— moved from Buenos Aires to Barcelona. We started knowing nothing about audiovisuals, with a borrowed camera and a strong desire to learn. Today we have published more than 20 videos.
+  watchOnYoutube: Watch on YouTube
+
+ca:
+  heroTitle: La Casa de la Hormiga
+  heroSubtitle: Live Sessions
+  heroDescription: Gravacions audiovisuals de música en viu a Barcelona
+  heroCta: Veure vídeos
+  statsVideos: Vídeos
+  statsSince: Des de
+  statsBarcelona: Barcelona
+  statsLiveMusic: Live Music
+  whatWeDo: Què fem
+  whatWeDoText: A La Casa de la Hormiga realitzem gravacions audiovisuals de concerts reals, en viu i amb públic. Sempre intentem interferir el mínim possible en l'experiència dels qui hi assisteixen. La prioritat és la música i el moment, no la gravació.
+  featured: Vídeos destacats
+  featuredDescription: Una selecció de les nostres gravacions més especials
+  viewAll: Veure tots els vídeos
+  mission: La nostra missió
+  missionText: Som un projecte impulsat principalment per migrants, amb un fort compromís per visibilitzar la diversitat cultural que transita la ciutat. Busquem capturar l'escena musical de Barcelona per mostrar l'experiència autèntica que es viu a cada concert.
+  historyTitle: Història del projecte
+  historySummary: La Casa de la Hormiga va néixer el 2022, quan un amic de la infància —enginyer de so— es va mudar des de Buenos Aires a Barcelona. Vam començar sense saber res d'audiovisuals, amb una càmera prestada i moltes ganes d'aprendre. Avui ja hem publicat més de 20 vídeos.
+  watchOnYoutube: Veure a YouTube
+</i18n>

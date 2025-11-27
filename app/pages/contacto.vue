@@ -3,8 +3,8 @@
     <!-- Page Title -->
     <div class="page-title dark-background" data-aos="fade">
       <div class="container position-relative">
-        <h1>{{ $t('contact.title') }}</h1>
-        <p>{{ $t('contact.description') }}</p>
+        <h1>{{ t('title') }}</h1>
+        <p>{{ t('description') }}</p>
         <nav class="breadcrumbs">
           <ol>
             <li><NuxtLink :to="localePath('/')">{{ $t('nav.home') }}</NuxtLink></li>
@@ -22,24 +22,24 @@
           <div class="col-lg-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
             <div class="info-item h-100">
               <FaIcon icon="music" />
-              <h3>{{ $t('contact.artistsTitle') }}</h3>
-              <p>{{ $t('contact.artistsText') }}</p>
+              <h3>{{ t('artistsTitle') }}</h3>
+              <p>{{ t('artistsText') }}</p>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
             <div class="info-item h-100">
               <FaIcon icon="house" />
-              <h3>{{ $t('contact.spacesTitle') }}</h3>
-              <p>{{ $t('contact.spacesText') }}</p>
+              <h3>{{ t('spacesTitle') }}</h3>
+              <p>{{ t('spacesText') }}</p>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
             <div class="info-item h-100">
               <FaIcon icon="wrench" />
-              <h3>{{ $t('contact.teamTitle') }}</h3>
-              <p>{{ $t('contact.teamText') }}</p>
+              <h3>{{ t('teamTitle') }}</h3>
+              <p>{{ t('teamText') }}</p>
             </div>
           </div>
         </div>
@@ -49,7 +49,7 @@
           <!-- Contact Form -->
           <div class="col-lg-7" data-aos="fade-up" data-aos-delay="100">
             <div class="contact-form-card">
-              <h3>{{ $t('contact.formTitle') }}</h3>
+              <h3>{{ t('formTitle') }}</h3>
 
               <form @submit.prevent="submitForm" class="contact-form">
                 <input type="hidden" name="access_key" :value="web3formsKey" />
@@ -57,52 +57,52 @@
 
                 <div class="row gy-3">
                   <div class="col-md-6">
-                    <label for="name">{{ $t('contact.form.name') }} *</label>
+                    <label for="name">{{ t('formName') }} *</label>
                     <input
                       type="text"
                       id="name"
                       v-model="form.name"
-                      :placeholder="$t('contact.form.namePlaceholder')"
+                      :placeholder="t('formNamePlaceholder')"
                       required
                     />
                   </div>
                   <div class="col-md-6">
-                    <label for="email">{{ $t('contact.form.email') }} *</label>
+                    <label for="email">{{ t('formEmail') }} *</label>
                     <input
                       type="email"
                       id="email"
                       v-model="form.email"
-                      :placeholder="$t('contact.form.emailPlaceholder')"
+                      :placeholder="t('formEmailPlaceholder')"
                       required
                     />
                   </div>
                   <div class="col-12">
-                    <label for="subject">{{ $t('contact.form.subject') }}</label>
+                    <label for="subject">{{ t('formSubject') }}</label>
                     <select id="subject" v-model="form.subject">
-                      <option value="">{{ $t('contact.form.subjectPlaceholder') }}</option>
-                      <option value="artista">{{ $t('contact.form.subjectArtist') }}</option>
-                      <option value="espacio">{{ $t('contact.form.subjectVenue') }}</option>
-                      <option value="equipo">{{ $t('contact.form.subjectTeam') }}</option>
-                      <option value="otro">{{ $t('contact.form.subjectOther') }}</option>
+                      <option value="">{{ t('formSubjectPlaceholder') }}</option>
+                      <option value="artista">{{ t('formSubjectArtist') }}</option>
+                      <option value="espacio">{{ t('formSubjectVenue') }}</option>
+                      <option value="equipo">{{ t('formSubjectTeam') }}</option>
+                      <option value="otro">{{ t('formSubjectOther') }}</option>
                     </select>
                   </div>
                   <div class="col-12">
-                    <label for="message">{{ $t('contact.form.message') }} *</label>
+                    <label for="message">{{ t('formMessage') }} *</label>
                     <textarea
                       id="message"
                       v-model="form.message"
                       rows="5"
-                      :placeholder="$t('contact.form.messagePlaceholder')"
+                      :placeholder="t('formMessagePlaceholder')"
                       required
                     ></textarea>
                   </div>
                   <div class="col-12">
                     <button type="submit" class="btn-submit" :disabled="isSubmitting">
                       <span v-if="isSubmitting">
-                        <FaIcon icon="hourglass" class="me-2" />{{ $t('contact.form.sending') }}
+                        <FaIcon icon="hourglass" class="me-2" />{{ t('formSending') }}
                       </span>
                       <span v-else>
-                        <FaIcon icon="paper-plane" class="me-2" />{{ $t('contact.form.send') }}
+                        <FaIcon icon="paper-plane" class="me-2" />{{ t('formSend') }}
                       </span>
                     </button>
                   </div>
@@ -110,10 +110,10 @@
 
                 <!-- Success/Error Messages -->
                 <div v-if="submitStatus === 'success'" class="alert alert-success mt-3">
-                  <FaIcon icon="circle-check" class="me-2" />{{ $t('contact.form.success') }}
+                  <FaIcon icon="circle-check" class="me-2" />{{ t('formSuccess') }}
                 </div>
                 <div v-if="submitStatus === 'error'" class="alert alert-error mt-3">
-                  <FaIcon icon="circle-exclamation" class="me-2" />{{ $t('contact.form.error') }}
+                  <FaIcon icon="circle-exclamation" class="me-2" />{{ t('formError') }}
                 </div>
               </form>
             </div>
@@ -122,7 +122,7 @@
           <!-- Contact Info -->
           <div class="col-lg-5" data-aos="fade-up" data-aos-delay="200">
             <div class="contact-info-card">
-              <h3>{{ $t('footer.social') }}</h3>
+              <h3>{{ t('social') }}</h3>
               <div class="social-links-large">
                 <a :href="socialLinks.youtube" target="_blank" rel="noopener" class="youtube">
                   <FaIcon :icon="['fab', 'youtube']" />
@@ -146,8 +146,8 @@
           <div class="col-lg-8 text-center" data-aos="fade-up">
             <div class="location-card">
               <FaIcon icon="location-dot" />
-              <h3>{{ $t('location.city') }}</h3>
-              <p>{{ $t('location.venuesDescription') }}</p>
+              <h3>{{ t('locationCity') }}</h3>
+              <p>{{ t('locationVenuesDescription') }}</p>
             </div>
           </div>
         </div>
@@ -159,6 +159,8 @@
 <script setup lang="ts">
 import { socialLinks } from '~/data/social'
 
+const { t } = useI18n({ useScope: 'local' })
+const { t: $t } = useI18n()
 const localePath = useLocalePath()
 
 useHead({
@@ -492,3 +494,95 @@ onMounted(() => {
   font-size: 16px;
 }
 </style>
+
+<i18n lang="yaml">
+es:
+  title: Contacto
+  description: "¿Quieres colaborar con nosotros?"
+  artistsTitle: Artistas
+  artistsText: "Estamos abiertos a propuestas de artistas que quieran grabar con nosotros. No tenemos criterios técnicos ni requisitos específicos: buscamos trabajar con personas que compartan nuestros valores."
+  spacesTitle: Espacios
+  spacesText: Actualmente grabamos exclusivamente en salas de conciertos y espacios reales, con público presente. Si gestionas un espacio y quieres colaborar, estamos siempre interesados en sumar nuevas locaciones.
+  teamTitle: Equipo técnico
+  teamText: Nos encanta compartir lo que sabemos y aprender de otras personas. Si te interesa el mundo de la grabación audiovisual y la música en vivo, puedes acercarte.
+  formTitle: Envíanos un mensaje
+  social: Redes sociales
+  formName: Nombre
+  formNamePlaceholder: Tu nombre
+  formEmail: Email
+  formEmailPlaceholder: "tu{'@'}email.com"
+  formSubject: Motivo
+  formSubjectPlaceholder: Selecciona un motivo
+  formSubjectArtist: Soy artista y quiero grabar
+  formSubjectVenue: Gestiono un espacio
+  formSubjectTeam: Quiero unirme al equipo
+  formSubjectOther: Otro
+  formMessage: Mensaje
+  formMessagePlaceholder: Cuéntanos sobre tu proyecto o propuesta...
+  formSend: Enviar mensaje
+  formSending: Enviando...
+  formSuccess: "¡Mensaje enviado! Te responderemos pronto."
+  formError: Error al enviar. Por favor, intenta de nuevo.
+  locationCity: Barcelona
+  locationVenuesDescription: "Grabamos en diversas salas de conciertos de la ciudad: Diobar, Rock n Trini, Absenta del Raval, Sala Wolf y más."
+
+en:
+  title: Contact
+  description: Want to collaborate with us?
+  artistsTitle: Artists
+  artistsText: "We are open to proposals from artists who want to record with us. We have no technical criteria or specific requirements: we seek to work with people who share our values."
+  spacesTitle: Venues
+  spacesText: We currently record exclusively in concert halls and real spaces, with an audience present. If you manage a venue and want to collaborate, we are always interested in adding new locations.
+  teamTitle: Technical team
+  teamText: We love to share what we know and learn from others. If you are interested in the world of audiovisual recording and live music, you can approach us.
+  formTitle: Send us a message
+  social: Social media
+  formName: Name
+  formNamePlaceholder: Your name
+  formEmail: Email
+  formEmailPlaceholder: "your{'@'}email.com"
+  formSubject: Subject
+  formSubjectPlaceholder: Select a subject
+  formSubjectArtist: I'm an artist and want to record
+  formSubjectVenue: I manage a venue
+  formSubjectTeam: I want to join the team
+  formSubjectOther: Other
+  formMessage: Message
+  formMessagePlaceholder: Tell us about your project or proposal...
+  formSend: Send message
+  formSending: Sending...
+  formSuccess: Message sent! We'll get back to you soon.
+  formError: Error sending. Please try again.
+  locationCity: Barcelona
+  locationVenuesDescription: "We record in various concert venues around the city: Diobar, Rock n Trini, Absenta del Raval, Sala Wolf and more."
+
+ca:
+  title: Contacte
+  description: Vols col·laborar amb nosaltres?
+  artistsTitle: Artistes
+  artistsText: "Estem oberts a propostes d'artistes que vulguin gravar amb nosaltres. No tenim criteris tècnics ni requisits específics: busquem treballar amb persones que comparteixin els nostres valors."
+  spacesTitle: Espais
+  spacesText: Actualment gravem exclusivament a sales de concerts i espais reals, amb públic present. Si gestions un espai i vols col·laborar, sempre estem interessats a sumar noves localitzacions.
+  teamTitle: Equip tècnic
+  teamText: Ens encanta compartir el que sabem i aprendre d'altres persones. Si t'interessa el món de la gravació audiovisual i la música en viu, pots acostar-te.
+  formTitle: Envia'ns un missatge
+  social: Xarxes socials
+  formName: Nom
+  formNamePlaceholder: El teu nom
+  formEmail: Email
+  formEmailPlaceholder: "el.teu{'@'}email.com"
+  formSubject: Motiu
+  formSubjectPlaceholder: Selecciona un motiu
+  formSubjectArtist: Sóc artista i vull gravar
+  formSubjectVenue: Gestiono un espai
+  formSubjectTeam: Vull unir-me a l'equip
+  formSubjectOther: Altre
+  formMessage: Missatge
+  formMessagePlaceholder: Explica'ns el teu projecte o proposta...
+  formSend: Enviar missatge
+  formSending: Enviant...
+  formSuccess: Missatge enviat! Et respondrem aviat.
+  formError: Error en enviar. Si us plau, torna-ho a provar.
+  locationCity: Barcelona
+  locationVenuesDescription: "Gravem a diverses sales de concerts de la ciutat: Diobar, Rock n Trini, Absenta del Raval, Sala Wolf i més."
+</i18n>

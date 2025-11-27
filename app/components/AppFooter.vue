@@ -6,45 +6,24 @@
         <div class="col-lg-5 col-md-12 footer-about">
           <NuxtLink :to="localePath('/')" class="logo d-flex align-items-center">
             <img src="/img/logo.png" alt="La Casa de la Hormiga" />
-            <span class="sitename">La Casa de la Hormiga</span>
+            <span class="sitename">LA CASA DE LA HORMIGA</span>
           </NuxtLink>
           <p>{{ $t('footer.description') }}</p>
-          <div class="social-links d-flex mt-4">
-            <a :href="socialLinks.youtube" target="_blank" rel="noopener" aria-label="YouTube">
+        </div>
+
+        <div class="col-auto footer-social ms-auto">
+          <h4>{{ $t('nav.contact') }}</h4>
+          <div class="social-links d-flex">
+            <a :href="socialLinks.youtube" target="_blank" rel="noopener" aria-label="YouTube" class="youtube" data-tooltip="YouTube">
               <FaIcon :icon="['fab', 'youtube']" />
             </a>
-            <a :href="socialLinks.instagram" target="_blank" rel="noopener" aria-label="Instagram">
+            <a :href="socialLinks.instagram" target="_blank" rel="noopener" aria-label="Instagram" class="instagram" data-tooltip="Instagram">
               <FaIcon :icon="['fab', 'instagram']" />
             </a>
+            <NuxtLink :to="localePath('/contacto')" aria-label="Contacto" class="contact" :data-tooltip="$t('contact.formTitle')">
+              <FaIcon icon="envelope" />
+            </NuxtLink>
           </div>
-        </div>
-
-        <div class="col-lg-2 col-6 footer-links">
-          <h4>{{ $t('footer.links') }}</h4>
-          <ul>
-            <li><NuxtLink :to="localePath('/')">{{ $t('nav.home') }}</NuxtLink></li>
-            <li><NuxtLink :to="localePath('/proyecto')">{{ $t('nav.about') }}</NuxtLink></li>
-            <li><NuxtLink :to="localePath('/videos')">{{ $t('nav.videos') }}</NuxtLink></li>
-            <li><NuxtLink :to="localePath('/contacto')">{{ $t('nav.contact') }}</NuxtLink></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-2 col-6 footer-links">
-          <h4>{{ $t('footer.liveSessions') }}</h4>
-          <ul>
-            <li><a href="https://www.youtube.com/watch?v=qNz-JDd6_Eo" target="_blank">Pyramides</a></li>
-            <li><a href="https://www.youtube.com/watch?v=C1D30TS0hmY" target="_blank">Manza</a></li>
-            <li><a href="https://www.youtube.com/watch?v=8C4IPKPuhEI" target="_blank">Galería Interior</a></li>
-            <li><a href="https://www.youtube.com/watch?v=3D-9XwMOGnY" target="_blank">Sergio Pángaro</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
-          <h4>{{ $t('nav.contact') }}</h4>
-          <p><FaIcon icon="location-dot" /> {{ $t('location.city') }}, {{ $t('location.country') }}</p>
-          <NuxtLink :to="localePath('/contacto')" class="btn-contact-footer mt-2">
-            <FaIcon icon="envelope" class="me-2" />{{ $t('contact.formTitle') }}
-          </NuxtLink>
         </div>
 
       </div>
@@ -53,7 +32,7 @@
     <div class="container copyright text-center mt-4">
       <p>© {{ new Date().getFullYear() }} <strong class="px-1 sitename">La Casa de la Hormiga</strong> {{ $t('footer.copyright') }}</p>
       <div class="credits">
-        {{ $t('location.city') }} - {{ $t('footer.liveSessions') }}
+        {{ $t('location.city') }}
       </div>
     </div>
 
@@ -67,39 +46,84 @@ const localePath = useLocalePath()
 </script>
 
 <style scoped>
-.footer-about .logo img {
-  max-height: 40px;
-  margin-right: 10px;
-}
-
-.footer-contact i {
-  color: var(--color-violeta);
-  margin-right: 8px;
-}
-
-.footer-contact a {
-  color: rgba(255, 255, 255, 0.7);
-}
-
-.footer-contact a:hover {
-  color: var(--color-violeta);
-}
-
-.btn-contact-footer {
-  display: inline-flex;
-  align-items: center;
-  background: var(--color-violeta);
-  color: #000;
-  padding: 8px 16px;
-  border-radius: 4px;
+.footer-social h4 {
   font-size: 14px;
-  font-weight: 500;
-  text-decoration: none;
-  transition: all 0.3s;
+  margin-bottom: 15px;
 }
 
-.btn-contact-footer:hover {
-  background: var(--color-verde);
-  color: #000;
+.footer-social .social-links a {
+  width: 44px;
+  height: 44px;
+  font-size: 20px;
+}
+
+.social-links a.youtube {
+  background: rgba(255, 0, 0, 0.1);
+  color: #FF0000;
+}
+
+.social-links a.youtube:hover {
+  background: #FF0000;
+  color: #fff;
+}
+
+.social-links a.instagram {
+  background: rgba(225, 48, 108, 0.1);
+  color: #E1306C;
+}
+
+.social-links a.instagram:hover {
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  color: #fff;
+}
+
+.social-links a.contact {
+  background: rgba(157, 78, 221, 0.1);
+  color: var(--color-violeta);
+}
+
+.social-links a.contact:hover {
+  background: var(--color-violeta);
+  color: #fff;
+}
+
+.social-links a[data-tooltip] {
+  position: relative;
+}
+
+.social-links a[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s, visibility 0.2s;
+  margin-top: 8px;
+}
+
+.social-links a[data-tooltip]:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+@media (max-width: 991px) {
+  .footer-social {
+    width: 100%;
+    text-align: center;
+    margin: 0 !important;
+    margin-top: 20px !important;
+  }
+
+  .footer-social .social-links {
+    justify-content: center;
+  }
 }
 </style>

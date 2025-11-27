@@ -594,9 +594,11 @@ section {
 }
 
 .footer .footer-about .logo span {
+  font-family: var(--heading-font);
   font-size: 24px;
-  font-weight: 700;
+  font-weight: 400;
   color: var(--color-violeta);
+  text-transform: uppercase;
 }
 
 .footer .footer-links h4,

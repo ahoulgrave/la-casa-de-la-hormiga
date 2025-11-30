@@ -310,6 +310,7 @@ onMounted(() => {
   cursor: pointer;
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .video-card p:last-child {
@@ -323,6 +324,13 @@ onMounted(() => {
 .video-card .card-img {
   position: relative;
   overflow: hidden;
+  aspect-ratio: 16 / 9;
+}
+
+.video-card .card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .video-card .play-btn {
